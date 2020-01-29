@@ -25,7 +25,7 @@
 |user_id|integer|null: false, foreign_key: true|
 |phone_number|integer|null: false|
 ### Association
-- has_one :user
+- belongs_to :user
 
 
 #creditsテーブル
@@ -61,7 +61,7 @@
 |------|----|-------|
 |use_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
-|text|text||
+|text|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :item
@@ -71,7 +71,7 @@
 #imagesテーブル
 |column|Type|Option|
 |------|----|-------|
-|image|integer|null: false|
+|image|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
 -belongs_to :item
