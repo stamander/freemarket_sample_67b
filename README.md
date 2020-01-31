@@ -1,4 +1,4 @@
-#usersテーブル
+# usersテーブル
 |column|Type|Option|
 |------|----|-------|
 |nick_name|string|null: false|
@@ -13,7 +13,7 @@
 
 
 
-#profilesテーブル
+# profilesテーブル
 |column|Type|Option|
 |------|----|-------|
 |first_name|string|null: false|
@@ -28,7 +28,7 @@
 - belongs_to :user
 
 
-#creditsテーブル
+# creditsテーブル
 |column|Type|Option|
 |------|----|-------|
 |use_id|integer|null: false, foreign_key: true|
@@ -43,7 +43,7 @@
 - has_one :user
 
 
-#addressesテーブル
+# addressesテーブル
 |column|Type|Option|
 |------|----|-------|
 |use_id|integer|null: false, foreign_key: true|
@@ -56,7 +56,7 @@
 - belongs_to :user
 
 
-#commentsテーブル
+# commentsテーブル
 |column|Type|Option|
 |------|----|-------|
 |use_id|integer|null: false, foreign_key: true|
@@ -68,17 +68,17 @@
 
 
 
-#imagesテーブル
+# imagesテーブル
 |column|Type|Option|
 |------|----|-------|
 |image|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
--belongs_to :item
+- belongs_to :item
 
 
 
-#itemsテーブル
+# itemsテーブル
 |column|Type|Option|
 |------|----|-------|
 |name|string|null: false|
@@ -94,21 +94,21 @@
 |user_id|integer|null: false, foreign_key: true|
 |quality|string|null: false|
 ### Association
--has_many :images
--has_many :comments
--belongs_to :brand
--belongs_to :user
--belongs_to :category
+- has_many :images
+- has_many :comments
+- belongs_to :brand
+- belongs_to :user
+- belongs_to :category
 
 
 
-#brandsテーブル
+# brandsテーブル
 |name|string|null: false|
 ### Association
--has_many :items
+- has_many :items
 
 
-#categoryテーブル
+# categoryテーブル
 |name|string|null: false|
 ### Association
--has_many :items
+- has_many :items
