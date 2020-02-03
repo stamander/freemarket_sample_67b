@@ -87,7 +87,7 @@ nav{
 }
 
 .download-Advertisement{
-  background-image: url("bg-mainVisual-pict_pc.jpg");
+  background-image: url("/assets/bg-mainVisual-pict_pc.jpg");
   height: 560px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -192,7 +192,7 @@ ul{
 }
 
 .download-Advertisement2{
-  background-image: url("bg-topMiddleDl-pict.jpg");
+  background-image: url("/assets/bg-topMiddleDl-pict.jpg");
   &__subtitle{
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     font-size: 20px;
@@ -342,7 +342,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 }
 
 .download-Advertisement3{
-  background-image: url("bg-appBanner-pict.jpg");
+  background-image: url("/assets/bg-appBanner-pict.jpg");
   position: relative;
   background-position: center;
   text-align: center;
