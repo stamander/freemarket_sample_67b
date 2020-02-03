@@ -1,0 +1,290 @@
+
+.big-box{
+  display: flex;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(236, 232, 232);
+  &__side-bar{
+    width: 20%;
+    &__mypj-box{
+      width: 200px;
+      margin: 30px auto;
+      &__title{
+        font-weight: bold;
+      }
+      &__contents{
+        background-color: white;
+        border-top: solid 1px;
+        border-bottom: solid 1px;
+        padding: 5px;
+        color: black;
+        
+        }
+    }
+  }
+
+
+  &__main-box{
+  
+    width: calc(100% - 20%);
+    &__photos{
+      margin: 10px auto;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      
+      &__photo1{
+        background-color: rgb(170, 165, 165);
+        width: 191.25px;
+        height: 191.25px;
+        .camera{
+          margin: 70px;
+          width: 50px;
+          height: 50px;
+          .file{
+            display: none;
+          }
+          
+          .input{
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            display: none;
+            
+          }
+        }
+      }
+
+
+    }
+    &__form-box{
+      width: 90%;
+      margin: 30px auto;
+      border-radius: 4px;
+      &__confirm{
+        padding: 5px;
+        color: black;
+        background-color: white;
+        width: 100px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-left: 78%;
+      
+      }
+
+
+      &__names{
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &__name{
+          display: inline-block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color:white;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 50px;
+          font-size: 15px;
+        }
+      }
+
+      &__explain{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(131, 121, 121);
+        
+        &__name{
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color: white;
+          width: 70%;
+          height: 200px;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 65px;
+          font-size: 15px;
+        }
+      }
+      &__category{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        
+        &__name{
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 65px;
+          font-size: 15px;
+        }
+      }
+      &__brand{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+
+        &__name{
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        
+      }
+
+      &__quarity{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(131, 121, 121);
+
+        &__name{
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 85px;
+          font-size: 15px;
+        }
+      }
+
+
+      &__shipping-charges{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        &__name{
+          font-weight: bold;
+        }
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 95px;
+          font-size: 15px;
+        }
+      }
+
+      &__way-of-delivary{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        &__name{
+          font-weight: bold;
+        }
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+      }
+
+      &__shipping-area{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        &__name{
+          font-weight: bold;
+        }
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+      }
+      .need{
+        position: absolute;
+        color:red;
+        margin-left: 100px;
+        font-size: 15px;
+      }
+    }
+      &__shipping-date{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(131, 121, 121);
+        &__name{
+          font-weight: bold;
+        }
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 100px;
+          font-size: 15px;
+        }
+      }
+
+      &__price{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 100px;
+  
+        &__name{
+          font-weight: bold;
+        }
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 65px;
+          font-size: 15px;
+        }
+      }
+
+    }
+  }
+}
+
