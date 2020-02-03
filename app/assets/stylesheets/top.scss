@@ -1,6 +1,3 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body{
   margin: 0 auto;
 }
@@ -57,10 +54,7 @@ nav{
   width: 50px;
 }
 
-a{  
-  color: black;
-  text-decoration: none;
-}
+
 
 .linkrecord{
   font-size: 14px;
@@ -68,19 +62,28 @@ a{
   margin-bottom: 10px;
   text-align: center;
   padding: 0 120px;
-
+  color: black;
   &__right{
     margin-left: auto;
+    color: black;
   }
 }
 
-.link_right{
-  padding: 0 0 0 16px;
-}
-
 .links{
+  color: black;
+  text-decoration: none;
   margin-left: 10px;
   line-height: 38px;
+}
+
+.anylink{
+  color: black;
+  text-decoration: none;
+}
+
+#links__right{
+  padding: 0 0 0 16px;
+  text-decoration: none;
 }
 
 .download-Advertisement{
@@ -292,21 +295,25 @@ ul{
       overflow: hidden;
       margin: 0;
       z-index: auto;
+
     }
     &--body{
       background-color: white;
       color: #333;
       padding: 16px;
+
     }
     &--name{
       overflow: hidden;
       line-height: 1.5;
       font-size: 16px;
       text-align: left;
-      display: flex;
+
     }
     &--price{
       font-size: 16px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
