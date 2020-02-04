@@ -108,7 +108,8 @@
       .Pickup__forms
         .Pickup__form
           %figure{class: "Pickup__item--image"}
-            = image_tag "icon-04.png"
+            = link_to "itempurchase" do 
+              =image_tag "icon-04.png"
           .Pickup__item--body
             %h3{class: "Pickup__item--name"} 商品名1
             .Pickup__item--price

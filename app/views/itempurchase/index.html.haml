@@ -1,0 +1,56 @@
+.wrrapper
+  .top
+    = link_to image_tag "logo.png",size: "180x50",class:"top__logo"
+    
+  %main.main
+    .contents__area
+      .contents__area__title 購入内容の確認
+      %section.contents__area__item-info
+        .contents__area__item__inner
+          = image_tag "icon_camera.png",class:"contents__area__item__logo"
+          %ul.contents__area__item__about
+            %li.contents__area__item__title ＜♦︎新品♦︎ iPhoneケース ステラ・ルー＞
+            %li.contents__area__item__price ＜¥ 1,200（税込み）送料込み＞
+
+      %section.contents__buy-info
+        .contents__buy-info__inner
+
+          .contents__buy-info-price__table
+            .contents__buy-info-price__table__info
+              .contents__buy-info-price__table__intro 支払い金額
+              .contents__buy-info-price__table__price ¥ 1,200
+            .contents__buy-info-price__table__point 
+            %input.point__checkbox{type:"checkbox", value:"0"}ポイントを使用 (所持ポイント: P0)
+
+          .contents__buy-info-pay__table
+            .contents__buy-info-pay__table__info 
+              = link_to "", class:"card__info" do
+                変更する
+            .card__method 支払い方法
+            .card__name クレジットカード
+            .card__number ************5198
+            .card__deadline 有効期限 03 / 24
+            .card__type visa
+
+          .contents__buy-info-user__table
+            .contents__buy-info-user__table__info 
+              = link_to "", class:"user__info" do
+                変更する
+            .user__method 配送先
+            .user__postnumber 郵便番号
+            .user__address 住所
+            .user__name 名前
+
+          .contents__buy-info-submit__table
+
+            = link_to "", class:"contents__buy-info-submit__table__submit-btn" do
+              購入する
+
+  .bot
+    %ul.bot__privacy
+      %li.policy プライバシーポリシー  
+      %li.terms FURIMA利用規約  
+      %li.transaction 特定商取引に関する表記
+    = link_to image_tag "logo-white.png",size: "180x50",class:"bot__icon"
+    .bot__copyright
+      ©️FURIMA,Inc
