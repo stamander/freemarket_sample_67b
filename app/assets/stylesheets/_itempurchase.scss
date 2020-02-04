@@ -1,0 +1,183 @@
+.wrrapper {
+  background-color: #EEEEEE	;
+}
+
+.top {
+  height: 130px;
+  width: 100%;
+  &__logo{
+    height: 50px;
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+}
+
+.main {
+  height: 800px;
+  width: 100%;
+}
+.contents__area {
+  height: 800px;
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  &__title {
+    height: 100px;
+    width: 700px;
+    border-bottom: solid 1px #EEEEEE;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+  }
+  &__item-info {
+    height: 145px;
+    width: 700px;
+    border-bottom: solid 1px #EEEEEE;
+  }
+  &__item__inner{
+    height: 80px;
+    width: 350px;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  &__item__logo {
+    background-color: #EEEEEE;
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+  }
+
+  &__item__title {
+    background-color: white;
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+  &__item__price {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 18px;
+  }
+  .contents__buy-info {
+    height: 555px;
+    width: 700px;
+    &__inner {
+      height: 510px;
+      width: 350px;
+      margin: 20px auto;
+    }
+    &-price__table {
+      height: 100px;
+      width: 350px;
+      border-bottom: solid 1px #EEEEEE;
+
+      &__info {
+        display: flex;
+        text-align: right;
+        margin-top: 30px;
+      }
+      &__intro {
+        font-size: 18px;
+        font-weight: bold;
+        width: 110px;
+      }
+      &__price {
+        font-size: 24px;
+        font-weight: bold;
+        width: 240px;
+        padding-right: 25px;
+      }
+      &__point {
+        font-size: 12px;
+        margin-top: 20px;
+      }
+      .point__checkbox {
+        margin: 0 10px 0 30px;
+        font-size: 16px;
+      }
+    }
+    &-pay__table {
+      height: 155px;
+      width: 350px;
+      font-size: 14px;
+      border-bottom: solid 1px #EEEEEE;
+      &__info {
+        padding-top: 10px;
+        text-align: right;
+      }
+
+      .card__method {
+        font-weight: bold;
+        padding-bottom: 5px;
+      }
+      .card__type {
+        padding-bottom: 22px;
+      }
+    }
+    &-user__table {
+      height: 155px;
+      width: 350px;
+      border-bottom: solid 1px #EEEEEE;
+      font-size: 14px;
+      &__info {
+        padding-top: 10px;
+        text-align: right;
+      }
+
+      .user__method {
+        font-weight: bold;
+        padding-bottom: 5px;
+      }
+    } 
+    &-submit__table {
+      height: 100px;
+      width: 350px;
+      position: relative;
+      &__submit-btn {
+        background-color: red;
+        font-size: 14px;
+        color: white;
+        padding: 15px 130px 15px 130px;
+        position: absolute;
+        top: 25px;
+        left: 20px
+      }
+    }
+  }
+}
+
+.bot {
+  height: 220px;
+  width: 100%;
+  &__privacy{
+    display: block;
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    padding-top: 40px;
+    font-size: 12px;
+    .policy {
+      margin-right: 15px;
+    }
+    .terms {
+      margin-right: 15px;
+    }
+  }
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    padding-top: 30px;
+    height: 50px;
+    width: 180px;
+    
+  }
+  &__copyright {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    color: #222222;
+  }
+}
