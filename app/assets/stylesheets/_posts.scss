@@ -1,0 +1,403 @@
+.header {
+  height: 128px;
+  width: 100%;
+  text-align: center;
+  background-color: #EEEEEE;
+  &__box {
+    height: 49px;
+    width: 193px;
+    margin: 40px 0 0 ;
+    display: inline-block;
+        &__icon {
+          height: 49px;
+          width: 193px;
+          &__content {
+            margin: 0 8px 0 0;
+          &__location {
+          }
+          }
+      }
+  }
+}
+
+.middle {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0 auto;
+  background-color: #EEEEEE;
+  .center {
+    height: 100%;
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #ffffff;
+      &__text {
+        height: 80px;
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 30px;
+      }
+      &__describe {
+        height: 100%;
+        padding: 40px 40px 64px;
+        .contents {
+          height: 100%;
+          width: 380px;
+          margin-right: auto;
+          margin-left: auto;
+          justify-content:space-between;
+          .nicknamegroup {
+            height: 70px;
+            width: 380px;
+            &__upper {
+              height: 22px;
+              width: 100%;
+              display: flex;
+              &__label {
+              font-size: 14px;
+              height: 16px;
+              width: 100px;
+              position: relative;
+              margin: 8px 0 0 8px;
+              display: inline-block;
+              }
+              &__require {
+                height: 16px;
+                width: 30px;
+                font-size: 13px;
+                color: #ffffff;
+                padding: 0.3em 0.3em;
+                margin: 4px 10px 0 0;
+                border-radius: 9px;
+                background-color: red;
+              }
+            }
+            &__input__text {
+              margin-top: 8px;
+              height: 38px;
+              width: 340px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          .mailgroup {
+              padding-top: 40px;
+              height: 70px;
+              width: 380px;
+            &__upper {
+              height: 22px;
+              width: 100%;
+              display: flex;
+              &__label {
+                font-size: 14px;
+                height: 16px;
+                width: 100px;
+                position: relative;
+                margin: 8px 0 0 8px;
+                display: inline-block;
+              }
+              &__require {
+                height: 16px;
+                width: 30px;
+                font-size: 13px;
+                color: #ffffff;
+                padding: 0.3em 0.3em;
+                margin: 4px 10px 0 0;
+                border-radius: 9px;
+                background-color: red;
+              }
+            }
+            &__input__text {
+              margin-top: 8px;
+              height: 38px;
+              width: 340px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          .passwordgroup {
+            padding-top: 40px;
+            height: 90px;
+            width: 380px;
+            &__upper {
+              height: 22px;
+              width: 100%;
+              display: flex;
+              &__label {
+                font-size: 14px;
+                height: 16px;
+                width: 100px;
+                position: relative;
+                margin: 8px 0 0 8px;
+                display: inline-block;
+              }
+              &__require {
+                height: 16px;
+                width: 30px;
+                font-size: 13px;
+                color: #ffffff;
+                padding: 0.3em 0.3em;
+                margin: 4px 10px 0 0;
+                border-radius: 9px;
+                background-color: red;
+              }
+            }
+            &__input__text {
+              margin-top: 8px;
+              height: 38px;
+              width: 340px;
+              padding: 10px 16px 8px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.2;
+              font-size: 16px;
+            }
+        }
+        .notice {
+          padding-top: 10px;
+          height: 48px;
+          width: 340px;
+          font-size: 14px;
+        }
+        .check {
+          padding-top: 16px;
+          height: 24px;
+          width: 380px;
+          display: flex;
+          &__icon {
+          }
+          &__text {
+            font-size: 12px;
+            margin-top: 20px;
+          }
+        }
+        .notice {
+          height: 57px;
+          width: 380px;
+          &__upper {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .zenkakugroup {
+          padding-top: 40px;
+          &__upper {
+            height: 22px;
+            width: 100%;
+            display: flex;
+            &__label {
+              font-size: 14px;
+              height: 16px;
+              width: 100px;
+              position: relative;
+              margin: 8px 0 0 8px;
+              display: inline-block;
+            }
+            &__require {
+              height: 16px;
+              width: 30px;
+              font-size: 13px;
+              color: #ffffff;
+              padding: 0.3em 0.3em;
+              margin: 4px 10px 0 0;
+              border-radius: 9px;
+              background-color: red;
+            }
+          }
+          &__lower {
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+          }
+          &__last {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 12px;
+          }
+          &__first {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 12px;
+          }
+        }
+        .kanagroup {
+          padding-top: 40px;
+          &__upper {
+            height: 22px;
+            width: 100%;
+            display: flex;
+            &__label {
+              font-size: 14px;
+              height: 16px;
+              width: 100px;
+              position: relative;
+              margin: 8px 0 0 8px;
+              display: inline-block;
+            }
+            &__require {
+              height: 16px;
+              width: 30px;
+              font-size: 13px;
+              color: #ffffff;
+              padding: 0.3em 0.3em;
+              margin: 4px 10px 0 0;
+              border-radius: 9px;
+              background-color: red;
+            }
+          }
+          &__lower {
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            line-height: 1.5;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            &__last {
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              line-height: 1.5;
+              font-size: 12px;
+            }
+            &__first {
+              width: 100%;
+              margin: 8px 0 0;
+              height: 48px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              line-height: 1.5;
+              font-size: 12px;
+            }
+          }
+        }
+        .birthday {
+
+          margin-top: 50px;
+          &__upper {
+            height: 22px;
+            width: 100%;
+            display: flex;
+            &__label {
+              font-size: 14px;
+              height: 16px;
+              width: 100px;
+              position: relative;
+              margin: 8px 0 0 8px;
+              display: inline-block; 
+            }
+            &__require {
+              height: 16px;
+              width: 30px;
+              font-size: 13px;
+              color: #ffffff;
+              padding: 0.3em 0.3em;
+              margin: 4px 10px 0 0;
+              border-radius: 9px;
+              background-color: red;
+            }
+          }
+          .select {
+            padding-top: 8px;
+            height: 48px;
+            width: 70px;
+            display: flex;
+            &__year {
+              height: 48px;
+              width: 76px;
+              display: flex;
+              &__icon {
+                padding: 5px 0 5px;
+                height: 33px;
+                width:77px;
+                color: gray;
+                top: 5px;
+                font-size: 1.5rem;
+                font-weight: 100;
+                cursor: pointer;
+              }
+              .year {
+                margin: 10px 0 0 10px;
+              }
+            }
+            &__month {
+              margin-left: 50px;
+              height: 48px;
+              width: 76px;
+              display: flex;
+              &__icon {
+                padding: 5px 0 5px;
+                height: 33px;
+                width: 77px;
+                color: gray;
+                top: 5px;
+                font-size: 1.5rem;
+                font-weight: 100;
+                cursor: pointer;
+              }
+              .month {
+                margin: 10px 0 0 10px;
+              }
+            }
+            &__day {
+              margin-left: 30px;
+              height: 48px;
+              width: 76px;
+              display: flex;
+              &__icon {
+                padding: 5px 0 5px;
+                height: 33px;
+                width: 77px;
+                color: gray;
+                top: 5px;
+                font-size: 1.5rem;
+                font-weight: 100;
+                cursor: pointer;
+              }
+              .day {
+                margin: 10px 0 0 10px;
+              }
+            }
+          }
+        }
+        .next {
+          height: 50px;
+          width: 3８0px;
+          margin-top: 60px;
+          margin-bottom: 60px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          text-align: center;
+          padding-top: 30px;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
