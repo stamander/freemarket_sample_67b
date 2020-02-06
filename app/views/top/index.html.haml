@@ -3,11 +3,12 @@
     %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = image_tag "logo.png"
+        = link_to root_path do
+          = image_tag "/assets/logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
         %button.searchBtn{type: "submit"}
-          = image_tag "icon-search 1.png"
+          = image_tag "/assets/icon-search 1.png"
     .linkrecord
       .linkrecord__left
         .links
@@ -19,7 +20,7 @@
         .links
           = link_to "",class:"anylink" do
             ログイン
-          = link_to "user#index",class:"anylink",id:"links__right" do
+          = link_to "",class:"anylink",id:"links__right" do
             新規会員登録
   %main
     .download-Advertisement.download-Advertisement1
@@ -31,9 +32,9 @@
           フリマアプリです
         .aBtn
           = link_to do
-            = image_tag "btn-app-store.png"
+            = image_tag "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"
           = link_to do
-            = image_tag "btn-google-play.png"
+            = image_tag "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"
 
     .three-reazon
       %p.three-reazon__title FURIMAが選ばれる3つの理由
@@ -41,7 +42,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 1
-            = image_tag "pict-reason-01.jpg"
+            = image_tag "/assets/pict-reason-01.jpg"
           %h3{class: "reazon-list__title"}
             %span> 3分
             ですぐに出品
@@ -49,7 +50,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 2
-            = image_tag "pict-reason-02.jpg"
+            = image_tag "/assets/pict-reason-02.jpg"
           %h3{class: "reazon-list__title"}
             %span> シンプル
             で使いやすい
@@ -57,7 +58,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 3
-            = image_tag "pict-reason-03.jpg"
+            = image_tag "/assets/pict-reason-03.jpg"
           %h3{class: "reazon-list__title"}
             手数料
             %span 業界最安
@@ -73,16 +74,16 @@
           ほしかったあの商品に出会えるかもしれません。
         .aBtn
           = link_to do 
-            = image_tag "btn-app-store.png"
+            = image_tag "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"
           = link_to do
-            = image_tag "btn-google-play.png"
+            = image_tag "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"
     .three-Characteristic
       %h2.Characteristic__head FURIMAの特徴
       .Characteristic__items
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "icon-01.png"
+              = image_tag "/assets/icon-01.png"
             %h2.Characteristic__title 
               簡単に売り買いできる
             %p.Characteristic__detail 
@@ -90,7 +91,7 @@
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "icon-03.png"
+              = image_tag "/assets/icon-03.png"
             %h2.Characteristic__title 
               売上金は即日振り込みに対応
             %p.Characteristic__detail 
@@ -98,94 +99,54 @@
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "icon-04.png"
+              = image_tag "/assets/icon-04.png"
             %h2.Characteristic__title 様々な支払いに対応
             %p.Characteristic__detail お支払いは、クレジットカードだけでなく、ポイントカードや売上金など多彩な方法があります。
-
     .Pickup-category
       %h2.Pickup__title ピックアップカテゴリー
       %h3.Pickup__subtitle 新規投稿商品
       .Pickup__forms
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = link_to "itempurchase" do 
-              =image_tag "icon-04.png"
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名1
-            .Pickup__item--price
-              .Pickup__form__Pickup__item--price__name  金額円
-              .Pickup__form__Pickup__item--price__icon
-                %i.fas.fa-star 0
-            %p (税込)
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = image_tag ""
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名2
-            .Pickup__item--price
-              .Pickup__form__Pickup__item--price__name  金額円
-              .Pickup__form__Pickup__item--price__icon
-                %i.fas.fa-star 0
-            %p (税込)
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = image_tag ""
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名3
-          .Pickup__item--price
-            .Pickup__form__Pickup__item--price__name  金額円
-            .Pickup__form__Pickup__item--price__icon
-              %i.fas.fa-star 0
-            %p (税込)
+        - @item.first(3).each do |item|
+          .Pickup__form
+            %figure{class: "Pickup__item--image"}
+              - item.images.first(1).each do |image|
+                = image_tag image.image1
+            .Pickup__item--body
+              %h3{class: "Pickup__item--name"} 
+                = item.name
+              .Pickup__item--price
+                .Pickup__form__Pickup__item--price__name 
+                  金額#{item.price}円
+                .Pickup__form__Pickup__item--price__icon
+                  %i.fas.fa-star 0
+              %p (税込)
     .Pickup-brand
       %h2.Pickup__title ピックアップブランド
-      %h3.Pickup__subtitle ブランド名
+      %h3.Pickup__subtitle UNIQLO
       .Pickup__forms
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = image_tag ""
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名3
-            .Pickup__item--price
-              .Pickup__form__Pickup__item--price__name  金額円
-              .Pickup__form__Pickup__item--price__icon
-                %i.fas.fa-star 0
-
-            %p (税込)
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = image_tag ""
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名3
-            .Pickup__item--price
-              .Pickup__form__Pickup__item--price__name  金額円
-              .Pickup__form__Pickup__item--price__icon
-                %i.fas.fa-star 0
-            %p (税込)
-
-
-        .Pickup__form
-          %figure{class: "Pickup__item--image"}
-            = image_tag ""
-          .Pickup__item--body
-            %h3{class: "Pickup__item--name"} 商品名3
-            .Pickup__item--price
-              .Pickup__form__Pickup__item--price__name  金額円
-              .Pickup__form__Pickup__item--price__icon
-                %i.fas.fa-star 0
-            %p (税込)
-
-
-
+        - @categoryitem.first(3).each do |categoryitem|
+          .Pickup__form
+            %figure{class: "Pickup__item--image"}
+              - categoryitem.images.first(1).each do |image|
+                = image_tag image.image1
+            .Pickup__item--body
+              %h3{class: "Pickup__item--name"} 
+                = categoryitem.name
+              .Pickup__item--price
+                .Pickup__form__Pickup__item--price__name 
+                  金額#{categoryitem.price}円
+                .Pickup__form__Pickup__item--price__icon
+                  %i.fas.fa-star 0
+              %p (税込)
     .download-Advertisement.download-Advertisement3
       .download-Advertisement3__items
         %p.download-Advertisement3__subtitle 誰でもかんたん、人生を変えるフリマアプリ
         %h2.download-Advertisement3__detail 今すぐ無料ダウンロード！
         .aBtn
           = link_to do
-            = image_tag "btn-app-store.png"
+            = image_tag "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"
           = link_to do
-            = image_tag "btn-google-play.png"
+            = image_tag "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"
   %footer
     %ul.contents
       %li.content
@@ -226,11 +187,11 @@
               お知らせ
     .footer_icon
       = link_to do
-        = image_tag "logo.png"
+        = image_tag "/assets/logo.png"
       %p ©︎ FURIMA
-    = link_to "exhibition" do 
+    = link_to do 
       .ExhibitionBtn
         %span.ExhibitionBtn__text 出品する
         %br/
         .ExhibitionBtn__icon 
-          = image_tag "icon_camera.png"
+          = image_tag "/assets/icon_camera.png"
