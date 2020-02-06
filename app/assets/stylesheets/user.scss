@@ -13,8 +13,6 @@
           width: 193px;
           &__content {
             margin: 0 8px 0 0;
-          &__location {
-          }
           }
       }
   }
@@ -23,7 +21,6 @@
 .middle {
   height: 100%;
   width: 100%;
-  margin-bottom: 0 auto;
   background-color: #EEEEEE;
   .center {
     height: 100%;
@@ -35,13 +32,14 @@
         height: 80px;
         width: 100%;
         text-align: center;
+        padding-top: 20px;
         vertical-align: middle;
         font-size: 30px;
       }
       &__describe {
         height: 100%;
         padding: 40px 40px 64px;
-        .contents {
+        .contentskawano {
           height: 100%;
           width: 380px;
           margin-right: auto;
@@ -190,7 +188,7 @@
         .zenkakugroup {
           padding-top: 40px;
           &__upper {
-            height: 22px;
+            height: 30px;
             width: 100%;
             display: flex;
             &__label {
@@ -213,82 +211,79 @@
             }
           }
           &__lower {
-            height: 48px;
-            padding: 10px 16px 8px;
+            height: 70px;
             border-radius: 4px;
             background: #fff;
             line-height: 1.5;
-            font-size: 16px;
+            font-size: 20px;
             display: flex;
             justify-content: space-between;
-          }
-          &__last {
-            width: 100%;
-            margin: 8px 0 0;
-            height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 12px;
-          }
-          &__first {
-            width: 100%;
-            margin: 8px 0 0;
-            height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 12px;
-          }
-        }
-        .kanagroup {
-          padding-top: 40px;
-          &__upper {
-            height: 22px;
-            width: 100%;
-            display: flex;
-            &__label {
-              font-size: 14px;
-              height: 16px;
-              width: 100px;
-              position: relative;
-              margin: 8px 0 0 8px;
-              display: inline-block;
-            }
-            &__require {
-              height: 16px;
-              width: 30px;
-              font-size: 13px;
-              color: #ffffff;
-              padding: 0.3em 0.3em;
-              margin: 4px 10px 0 0;
-              border-radius: 9px;
-              background-color: red;
-            }
-          }
-          &__lower {
-            height: 48px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            line-height: 1.5;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            &__last {
-              width: 100%;
+            &__first {
+              height: 36px;
+              width: 140px;
               margin: 8px 0 0;
-              height: 48px;
               padding: 10px 16px 8px;
               border-radius: 4px;
               line-height: 1.5;
               font-size: 12px;
             }
-            &__first {
-              width: 100%;
+            &__last {                            
+              height: 36px;
+              width: 140px;
               margin: 8px 0 0;
-              height: 48px;
+              padding-left: 40px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              line-height: 1.5;
+              font-size: 12px;
+            }
+          }
+        }
+        .kanagroup {
+          padding-top: 40px;
+          &__upper {
+            height: 30px;
+            width: 100%;
+            display: flex;
+            &__label {
+              font-size: 14px;
+              height: 16px;
+              width: 100px;
+              position: relative;
+              margin: 8px 0 0 8px;
+              display: inline-block;
+            }
+            &__require {
+              height: 16px;
+              width: 30px;
+              font-size: 13px;
+              color: #ffffff;
+              padding: 0.3em 0.3em;
+              margin: 4px 10px 0 0;
+              border-radius: 9px;
+              background-color: red;
+            }
+          }
+          &__lower {
+            height: 70px;
+            border-radius: 4px;
+            line-height: 1.5;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            &__first {
+              height: 36px;
+              width: 140px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              line-height: 1.5;
+              font-size: 12px;
+            }
+            &__last {
+              height: 36px;
+              width: 140px;
+              margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
               line-height: 1.5;
@@ -297,10 +292,9 @@
           }
         }
         .birthday {
-
           margin-top: 50px;
           &__upper {
-            height: 22px;
+            height: 30px;
             width: 100%;
             display: flex;
             &__label {
@@ -323,15 +317,12 @@
             }
           }
           .select {
-            padding-top: 8px;
-            height: 48px;
-            width: 70px;
             display: flex;
             &__year {
               height: 48px;
               width: 76px;
               display: flex;
-              &__icon {
+              &__pulldown {
                 padding: 5px 0 5px;
                 height: 33px;
                 width:77px;
@@ -350,7 +341,7 @@
               height: 48px;
               width: 76px;
               display: flex;
-              &__icon {
+              &__pulldown {
                 padding: 5px 0 5px;
                 height: 33px;
                 width: 77px;
@@ -369,7 +360,7 @@
               height: 48px;
               width: 76px;
               display: flex;
-              &__icon {
+              &__pulldown {
                 padding: 5px 0 5px;
                 height: 33px;
                 width: 77px;
