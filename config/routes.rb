@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :exhibition, only: :index 
   resources :itempurchase, only: :index
   resources :user, only: :index
+  resources :detail, only: :index
 end
