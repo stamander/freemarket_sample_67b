@@ -3,12 +3,12 @@
     %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to root_path do
-          = image_tag "/assets/logo.png"
+        = link_to itempurchase_index_path do
+          = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
         %button.searchBtn{type: "submit"}
-          = image_tag "/assets/icon-search 1.png"
+          = image_tag "icon-search 1.png"
     .linkrecord
       .linkrecord__left
         .links
@@ -42,7 +42,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 1
-            = image_tag "/assets/pict-reason-01.jpg"
+            = image_tag "pict-reason-01.jpg"
           %h3{class: "reazon-list__title"}
             %span> 3分
             ですぐに出品
@@ -50,7 +50,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 2
-            = image_tag "/assets/pict-reason-02.jpg"
+            = image_tag "pict-reason-02.jpg"
           %h3{class: "reazon-list__title"}
             %span> シンプル
             で使いやすい
@@ -58,7 +58,7 @@
         %li.reazon-list__form
           .reazon-list__photo
             %span.reazon-number 3
-            = image_tag "/assets/pict-reason-03.jpg"
+            = image_tag "pict-reason-03.jpg"
           %h3{class: "reazon-list__title"}
             手数料
             %span 業界最安
@@ -83,7 +83,7 @@
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "/assets/icon-01.png"
+              = image_tag "icon-01.png"
             %h2.Characteristic__title 
               簡単に売り買いできる
             %p.Characteristic__detail 
@@ -91,7 +91,7 @@
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "/assets/icon-03.png"
+              = image_tag "icon-03.png"
             %h2.Characteristic__title 
               売上金は即日振り込みに対応
             %p.Characteristic__detail 
@@ -99,7 +99,7 @@
         .Characteristic__item
           %section
             %figure.Characteristic__img
-              = image_tag "/assets/icon-04.png"
+              = image_tag "icon-04.png"
             %h2.Characteristic__title 様々な支払いに対応
             %p.Characteristic__detail お支払いは、クレジットカードだけでなく、ポイントカードや売上金など多彩な方法があります。
     .Pickup-category
@@ -187,11 +187,12 @@
               お知らせ
     .footer_icon
       = link_to do
-        = image_tag "/assets/logo.png"
+        = image_tag "logo.png"
       %p ©︎ FURIMA
     = link_to do 
       .ExhibitionBtn
         %span.ExhibitionBtn__text 出品する
         %br/
         .ExhibitionBtn__icon 
-          = image_tag "/assets/icon_camera.png"
+          = link_to exhibition_index_path do
+            = image_tag "icon_camera.png"
