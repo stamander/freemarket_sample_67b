@@ -4,81 +4,78 @@
   list-style: none;
 }
 
-body{
-  margin: 0 auto;
-  header{
-    padding: 0 60px;
-    nav{
-      max-width: 1040px;
-      width: 100%;
-      min-height: 82px;
-      margin: 0 auto;
-      padding: 15px 0 0;
-      position: relative;
+header{
+  padding: 0 60px;
+  nav{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .main-logo{
+      padding-bottom: 10px;
+      margin-right: 30px;
+      border-radius: 4px;
+      .main-logo img{
+        width: 175px;
+        height: 50px;
+      }
+    } 
+    .keyword{
       display: flex;
-      align-items: center;
-      .main-logo{
-        padding-bottom: 10px;
-        margin-right: 30px;
-        border-radius: 4px;
-        .main-logo img{
-          width: 175px;
-          height: 50px;
-        }
-      } 
-      .keyword{
-        display: flex;
-        margin-bottom: 5px;
-        .keyword button{
-          width: 36px;
-          border: 0;
-          cursor: pointer;
-          background-color: #3CCACE;
-          padding: 8px;
-        }
+      margin-bottom: 5px;
+      .keyword button{
+        width: 36px;
+        border: 0;
+        cursor: pointer;
+        background-color: #3CCACE;
+        padding: 8px;
+      }
 
-        .keywordbox{
-          margin-left: auto;
-          width: 40em;
-          height: 40px;
-          font-size: 20px;
-        }
-        .searchBtn{
-          font-size: 20px;
-          height: 45px;
-          width: 50px;
-        }
+      .keywordbox{
+        margin-left: auto;
+        width: 40em;
+        height: 40px;
+        font-size: 20px;
+      }
+      .searchBtn{
+        font-size: 20px;
+        height: 45px;
+        width: 50px;
       }
     }
-    .linkrecord{
-      font-size: 14px;
-      display: flex;
-      margin-bottom: 10px;
-      text-align: center;
-      padding: 0 120px;
+  }
+  .linkrecord{
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 0 120px;
+    color: black;
+    &__right{
+      margin-left: auto;
       color: black;
-      &__right{
-        margin-left: auto;
-        color: black;
-      
     
+  
 
-        .links{
+      .links{
+        color: black;
+        text-decoration: none;
+        margin-left: 10px;
+        line-height: 38px;
+      
+
+        .anylink{
           color: black;
           text-decoration: none;
-          margin-left: 10px;
-          line-height: 38px;
         
-
-          .anylink{
-            color: black;
-            text-decoration: none;
-          
-          }
-          #links__right{
-            padding: 0 0 0 16px;
-            text-decoration: none;
-          }
+        }
+        #links__right{
+          padding: 0 0 0 16px;
+          text-decoration: none;
         }
       }
     }
