@@ -184,6 +184,29 @@
         }
       }
 
+      &__size{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+
+        &__name{
+          font-weight: bold;
+        }
+
+        &__box{
+          background-color: white;
+          height: 50px;
+          width: 70%;
+        }
+        .need{
+          position: absolute;
+          color:red;
+          margin-left: 85px;
+          font-size: 15px;
+        }
+      }
+
 
       &__shipping-charges{
         margin-top: 30px;
