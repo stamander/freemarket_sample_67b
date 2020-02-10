@@ -53,6 +53,10 @@
         .big-box__main-box__form-box__names__name 商品名 
         %h1.need<※必須
         .big-box__main-box__form-box__names__box 
+          = form_for (@item) do |f|
+            = f.text_field :name
+            = f.submit "送信する"
+
 
       .big-box__main-box__form-box__explain
         .big-box__main-box__form-box__explain__name 商品説明
