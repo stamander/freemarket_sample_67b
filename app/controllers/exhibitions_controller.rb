@@ -1,5 +1,5 @@
 class ExhibitionsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
+  # before_action :set_item, except: [:index, :new, :create]
 
 
   def update
@@ -12,7 +12,7 @@ class ExhibitionsController < ApplicationController
   
   def new
     @item = Item.new
-    @item.images.build
+    @item.images.new
   end
 
   def create
@@ -25,13 +25,26 @@ class ExhibitionsController < ApplicationController
     
   end
 
+
+  def show
+
+  end
+
+  def destroy
+    if @item.destroy
+    redirect_to root_path
+    else
+      redirect_to exhibition_path(item)
+    end
+  end
+
 private
   def item_params
-    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:brand_id,:region,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1, :image2,:image3,:image4,:_destroy, :id])
+    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:brand_id,:region,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id])
 
   end
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  # def set_item
+  #   @item = Item.find(params[:id])
+  # end
 end

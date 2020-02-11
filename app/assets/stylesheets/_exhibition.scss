@@ -3,7 +3,7 @@
   display: flex;
   width: 80%;
   margin: auto;
-  background-color: rgb(236, 232, 232);
+
   &__side-bar{
     width: 20%;
     &__mypj-box{
@@ -27,28 +27,41 @@
   &__main-box{
   
     width: 100%;
+
+    
     &__photos{
       margin: 10px auto;
       width: 90%;
+
       display: flex;
-      justify-content: space-between;
+
+
       
       &__photo1{
         background-color: rgb(170, 165, 165);
-        width: 191.25px;
-        height: 191.25px;
-      .camera{
-          margin: 70px;
-          width: 50px;
-          height: 50px;
-          }
+        width: 100%;
+
+     
+
       }
-      
+
+
+
+.camera{
+  margin-left: 60px;
+  width: 50px;
+  height: 50px;
+}
+#image-box{
+  background-color: gray;
+  width: 191.25px;
+  height: 191.25px;
+}
 
 
     }
     &__form-box{
-      width: 90%;
+      width: 800px;
       margin: 30px auto;
       border-radius: 4px;
       &__confirm{
@@ -135,6 +148,11 @@
           background-color: white;
           height: 50px;
           width: 70%;
+          #item_category_id{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
         }
         .need{
           position: absolute;
@@ -158,6 +176,11 @@
           height: 50px;
           width: 70%;
         }
+        #item_brand_id{
+          width: 100%;
+          height: 100%;
+          font-size: 15px;
+        }
         
       }
 
@@ -176,6 +199,11 @@
           background-color: white;
           height: 50px;
           width: 70%;
+          #item_quality{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
         }
         .need{
           position: absolute;
@@ -199,7 +227,15 @@
           background-color: white;
           height: 50px;
           width: 70%;
+
+          #item_size{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
         }
+
+
         .need{
           position: absolute;
           color:red;
@@ -221,6 +257,12 @@
           background-color: white;
           height: 50px;
           width: 70%;
+
+          #item_postage{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
         }
         .need{
           position: absolute;
@@ -241,6 +283,12 @@
           background-color: white;
           height: 50px;
           width: 70%;
+
+          #item_way_of_delivery{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
         }
       }
 
@@ -255,6 +303,13 @@
           background-color: white;
           height: 50px;
           width: 70%;
+
+
+          #item_region{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
       }
       .need{
         position: absolute;
@@ -277,6 +332,12 @@
           height: 50px;
           width: 70%;
 
+          #item_shipping_date{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
+
         }
         .need{
           position: absolute;
@@ -297,6 +358,12 @@
           background-color: white;
           height: 50px;
           width: 70%;
+
+          #item_SaleStatu{
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+          }
       }
       .need{
         position: absolute;
@@ -325,8 +392,45 @@
           margin-left: 65px;
           font-size: 15px;
         }
-      }
 
+        #item_price{
+          width: 100%;
+          height: 100%;
+          font-size: 15px;
+        }
+
+
+      }
+      #go{
+        width: 100%;
+        font-size: 100px;
+
+
+
+      }
     }
   }
+}
+
+.btn-square-toy {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  background: #484d4e;/*背景色*/
+  color:floralwhite;/*=背景色*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+  border-bottom: solid 2px #484d4e;
+  border-radius: 4px;
+  font-weight: bold;
+  text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+  font-size: 30px;
+  margin-left: 80%;
+}
+
+.btn-square-toy:active {
+  /*押したとき*/
+  border-bottom: solid 2px #00BCD4;
+  box-shadow: none;
+  text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
 }

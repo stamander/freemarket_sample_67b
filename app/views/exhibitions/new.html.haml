@@ -40,37 +40,23 @@
   = form_for @item,url: exhibitions_path ,class: 'item-name',local: true do |f|
     .big-box__main-box
 
-      .big-box__main-box__photos
+      .big-box__main-box__photos#image-box
+   
 
-     
-        .big-box__main-box__photos__photo1
-          #photo2
-            #previews
-            - if @item.persisted?
-              - @item.images.each_with_index do |i, t|
-                = image_tag i.src.url, data: { index: t }, width: "100", height: '100'
 
-          = f.fields_for :images do |i|
-            .js-file_group{"data-index":i.index}
-              = i.file_field :image1, class: 'js-file'
-              %span.js-remove 
-            - if @item.persisted?
-              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-          - if @item.persisted?
-            .js-file_group{"data-index": @item.images.count}
-              = file_field_tag :image1, name: "item[images_attributes][#{@item.images.count}][image1]", class: 'js-file'
-              .js-remove 削除
-        
-          = f.submit "削除"
-          = image_tag 'icon_camera.png', alt: 'c', class: 'camera'
-        .big-box__main-box__photos__photo1
-          = image_tag 'icon_camera.png', alt: 'c',height: '50',width: '50', class: 'camera'
+        = f.fields_for :images do |i|
+          .js-file_group{"data-index":i.index}
+            = i.file_field :image, class: 'js-file'
+            %br/
+            %span.js-remove 削除
+        -#   - if @item.persisted?
+        -#     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+        -# - if @item.persisted?
+        -#   .js-file_group{"data-index": @item.images.count}
+        -#     = file_field_tag :image1,:image2, name: "item[images_attributes][#{@item.images.count}][image1]", class: 'js.file'
+        -#     .js-remove 削除
+      
 
-            
-        .big-box__main-box__photos__photo1
-          = image_tag 'icon_camera.png', alt: 'c',height: '50',width: '50', class: 'camera'
-        .big-box__main-box__photos__photo1
-          = image_tag 'icon_camera.png', alt: 'c',height: '50',width: '50', class: 'camera'
 
       .big-box__main-box__form-box
         .big-box__main-box__form-box__names
@@ -153,8 +139,8 @@
 
 
 
-        .big-box__main-box__form-box__confirm
-          = f.submit "出品する"
+
+        = f.submit "出品する",class:"btn-square-toy"
 
 
 
@@ -199,5 +185,5 @@
             お知らせ
 
 
-:javascript
+
 
