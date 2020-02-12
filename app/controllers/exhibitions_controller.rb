@@ -1,5 +1,4 @@
 class ExhibitionsController < ApplicationController
-
   def update
     if @item.update(item_params)
       redirect_to root_path
@@ -7,7 +6,7 @@ class ExhibitionsController < ApplicationController
       render :edit
     end
   end
-  
+
   def new
     @item = Item.new
     @item.images.new
@@ -20,12 +19,9 @@ class ExhibitionsController < ApplicationController
     else
       redirect_to new_exhibition_url
     end
-    
   end
 
-
   def show
-
   end
 
   def destroy
@@ -37,13 +33,12 @@ class ExhibitionsController < ApplicationController
   end
 
 private
+
   def item_params
     params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:brand_id,:region,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id])
-
   end
 
 end
 
 
-  
 

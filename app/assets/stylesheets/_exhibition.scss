@@ -3,7 +3,6 @@
   display: flex;
   width: 80%;
   margin: auto;
-
   &__side-bar{
     width: 20%;
     &__mypj-box{
@@ -23,27 +22,17 @@
     }
   }
 
-
   &__main-box{
-  
     width: 100%;
-
     
     &__photos{
       margin: 10px auto;
       width: 90%;
-
       display: flex;
       position: relative;
-
-
-      
       &__photo1{
         background-color: rgb(170, 165, 165);
         width: 100%;
-
-     
-
       }
 
 
@@ -59,14 +48,6 @@
   height: 191.25px;
 }
 
-
-
-.frozen{ 
-  // display: flex;
-
-}
-
-
     }
     &__form-box{
       width: 800px;
@@ -81,10 +62,7 @@
         text-align: center;
         margin-bottom: 30px;
         margin-left: 78%;
-      
       }
-
-
       &__names{
         height: 50px;
         display: flex;
@@ -95,11 +73,9 @@
           margin-bottom: 5px;
           font-weight: bold;
         }
-
         &__box{
           background-color:white;
           width: 70%;
-   
           #item_name{
             width: 100%;
             height: 100%;
@@ -113,18 +89,15 @@
           font-size: 15px;
         }
       }
-
       &__explain{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
         padding-bottom: 30px;
-        border-bottom: 1px solid rgb(131, 121, 121);
-        
+        border-bottom: 1px solid rgb(131, 121, 121); 
         &__name{
           font-weight: bold;
         }
-
         &__box{
           background-color: white;
           width: 70%;
@@ -146,12 +119,9 @@
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
-
-        
         &__name{
           font-weight: bold;
         }
-
         &__box{
           background-color: white;
           height: 50px;
@@ -173,12 +143,9 @@
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
-
-
         &__name{
           font-weight: bold;
         }
-
         &__box{
           background-color: white;
           height: 50px;
@@ -189,20 +156,16 @@
           height: 100%;
           font-size: 15px;
         }
-        
       }
-
       &__quarity{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
         padding-bottom: 30px;
         border-bottom: 1px solid rgb(131, 121, 121);
-
         &__name{
           font-weight: bold;
         }
-
         &__box{
           background-color: white;
           height: 50px;
@@ -220,30 +183,24 @@
           font-size: 15px;
         }
       }
-
       &__size{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
         padding-bottom: 30px;
-
         &__name{
           font-weight: bold;
         }
-
         &__box{
           background-color: white;
           height: 50px;
           width: 70%;
-
           #item_size{
             width: 100%;
             height: 100%;
             font-size: 15px;
           }
         }
-
-
         .need{
           position: absolute;
           color:red;
@@ -251,13 +208,10 @@
           font-size: 15px;
         }
       }
-
-
       &__shipping-charges{
         margin-top: 30px;
         display: flex;
         justify-content: space-between;
-
         &__name{
           font-weight: bold;
         }
@@ -265,7 +219,6 @@
           background-color: white;
           height: 50px;
           width: 70%;
-
           #item_postage{
             width: 100%;
             height: 100%;
@@ -279,7 +232,6 @@
           font-size: 15px;
         }
       }
-
       &__way-of-delivary{
         margin-top: 30px;
         display: flex;
@@ -291,7 +243,6 @@
           background-color: white;
           height: 50px;
           width: 70%;
-
           #item_way_of_delivery{
             width: 100%;
             height: 100%;
@@ -299,7 +250,6 @@
           }
         }
       }
-
       &__shipping-area{
         margin-top: 30px;
         display: flex;
@@ -311,8 +261,6 @@
           background-color: white;
           height: 50px;
           width: 70%;
-
-
           #item_region{
             width: 100%;
             height: 100%;
@@ -339,13 +287,11 @@
           background-color: white;
           height: 50px;
           width: 70%;
-
           #item_shipping_date{
             width: 100%;
             height: 100%;
             font-size: 15px;
           }
-
         }
         .need{
           position: absolute;
@@ -354,7 +300,6 @@
           font-size: 15px;
         }
       }
-
       &__SaleStatu{
         margin-top: 30px;
         display: flex;
@@ -366,7 +311,6 @@
           background-color: white;
           height: 50px;
           width: 70%;
-
           #item_SaleStatu{
             width: 100%;
             height: 100%;
@@ -385,7 +329,6 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 100px;
-  
         &__name{
           font-weight: bold;
         }
@@ -400,26 +343,19 @@
           margin-left: 65px;
           font-size: 15px;
         }
-
         #item_price{
           width: 100%;
           height: 100%;
           font-size: 15px;
         }
-
-
       }
       #go{
         width: 100%;
         font-size: 100px;
-
-
-
       }
     }
   }
 }
-
 .btn-square-toy {
   position: relative;
   display: inline-block;
@@ -442,23 +378,9 @@
   box-shadow: none;
   text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
 }
-
-
 .js-file_group{
   background-color: grey;
-  
-
-
-
-
 }
-
-#previews {  
-
-
-
-}
-
 
 
 .ana{

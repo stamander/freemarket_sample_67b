@@ -39,29 +39,18 @@
   .sell__form
   = form_for @item,url: exhibitions_path ,class: 'item-name',local: true do |f|
     .big-box__main-box
-
       .big-box__main-box__photos#image-box
-   
-
-
         = f.fields_for :images do |i|
           .js-file_group{"data-index":i.index}
             = i.file_field :image, class: 'js-file'
             %br/
             %span.js-remove 削除
-
-      
-
-
       .big-box__main-box__form-box
         .big-box__main-box__form-box__names
           .big-box__main-box__form-box__names__name 商品名 
           %h1.need<※必須
           .big-box__main-box__form-box__names__box 
             = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
-            
-              
-
 
         .big-box__main-box__form-box__explain
           .big-box__main-box__form-box__explain__name 商品説明
@@ -75,15 +64,10 @@
           .big-box__main-box__form-box__category__box
             = f.collection_select :category_id, Category.all, :id, :name
 
-
-            
-            
-
         .big-box__main-box__form-box__brand
           .big-box__main-box__form-box__brand__name ブランド
           .big-box__main-box__form-box__brand__box
             = f.text_field :brand_id
-
 
         .big-box__main-box__form-box__size
           .big-box__main-box__form-box__size__name サイズ
@@ -104,7 +88,6 @@
           .big-box__main-box__form-box__shipping-charges__box
             = f.collection_select :postage, Postage.all, :id, :name
             
-
         .big-box__main-box__form-box__way-of-delivary
           .big-box__main-box__form-box__way-of-delivary__name 配送方法
           .big-box__main-box__form-box__way-of-delivary__box
@@ -115,7 +98,6 @@
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-area__box
             = f.collection_select :region, Prefecture.all, :id, :name
-
 
         .big-box__main-box__form-box__shipping-date
           .big-box__main-box__form-box__shipping-date__name 発送日の目安
@@ -129,22 +111,13 @@
           .big-box__main-box__form-box__SaleStatu__box
             = f.text_field :SaleStatu
 
-
         .big-box__main-box__form-box__price
           .big-box__main-box__form-box__price__name 商品価格
           %h1.need<※必須
           .big-box__main-box__form-box__price__box
             = f.text_field :price
-
-
-
-
-
         = f.submit "出品する",class:"btn-square-toy"
-
-
-
-      
+    
 %footer
   %ul.contents
     %li.content
