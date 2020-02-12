@@ -49,12 +49,7 @@
             = i.file_field :image, class: 'js-file'
             %br/
             %span.js-remove 削除
-        -#   - if @item.persisted?
-        -#     = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-        -# - if @item.persisted?
-        -#   .js-file_group{"data-index": @item.images.count}
-        -#     = file_field_tag :image1,:image2, name: "item[images_attributes][#{@item.images.count}][image1]", class: 'js.file'
-        -#     .js-remove 削除
+
       
 
 
