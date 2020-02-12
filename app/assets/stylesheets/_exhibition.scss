@@ -34,6 +34,7 @@
       width: 90%;
 
       display: flex;
+      position: relative;
 
 
       
@@ -56,6 +57,13 @@
   background-color: gray;
   width: 191.25px;
   height: 191.25px;
+}
+
+
+
+.frozen{ 
+  // display: flex;
+
 }
 
 
@@ -434,3 +442,29 @@
   box-shadow: none;
   text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
 }
+
+
+.js-file_group{
+  background-color: grey;
+  
+
+
+
+
+}
+
+#previews {  
+
+
+
+}
+
+
+
+.ana{
+  width: 100px;
+  height: 100px;
+  top: 0;
+
+}
+

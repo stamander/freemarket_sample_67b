@@ -4,6 +4,11 @@ class ExhibitionController < ApplicationController
     @item = Item.all
   end 
 
+  def new
+    @item = Item.new(item_params)
+    @item.images.new
+  end
+
   def create
 
     @item = Item.new(item_params)
