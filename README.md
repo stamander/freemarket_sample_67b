@@ -71,7 +71,7 @@
 # imagesテーブル
 |column|Type|Option|
 |------|----|-------|
-|image|string|null: false|
+|image1|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
@@ -83,7 +83,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|explain|text|null: false|
+|explain|text|null: false|1
 |postage|integer|null: false|
 |region|string|null: false|
 |shipping_date|string|null: false|

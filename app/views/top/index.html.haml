@@ -8,7 +8,7 @@
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
         %button.searchBtn{type: "submit"}
-          = image_tag "icon-search 1.png"
+          = image_tag "icon-search 1.png",class:"glass"
     .linkrecord
       .linkrecord__left
         .links
@@ -189,12 +189,12 @@
               お知らせ
     .footer_icon
       = link_to do
-        = image_tag "logo.png"
+        = image_tag "logo.png",class:"glass"
       %p ©︎ FURIMA
     = link_to do 
       .ExhibitionBtn
         %span.ExhibitionBtn__text 出品する
         %br/
         .ExhibitionBtn__icon 
-          = link_to exhibition_index_path do
-            = image_tag "icon_camera.png"
+          = link_to new_exhibition_path do
+            = image_tag "icon_camera.png",class:"glass"
