@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'category/index'
+
   root "top#index"
   resources :top, only: :index 
   resources :exhibitions, except: :show
