@@ -24,12 +24,12 @@
 
   &__main-box{
     width: 100%;
+
     
     &__photos{
-      margin: 10px auto;
-      width: 90%;
-      display: flex;
-      position: relative;
+
+      width: 100%;
+
       &__photo1{
         background-color: rgb(170, 165, 165);
         width: 100%;
@@ -69,6 +69,7 @@
         justify-content: space-between;
         position: relative;
         &__name{
+          
           display: inline-block;
           margin-bottom: 5px;
           font-weight: bold;
@@ -379,7 +380,8 @@
   text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
 }
 .js-file_group{
-  background-color: grey;
+  float: left;
+  width: 100px;
 }
 
 
