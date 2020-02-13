@@ -1,4 +1,15 @@
-server '52.193.221.163', user: 'ec2-user', roles: %w{app db web}
+server '52.193.221.163',
+   user: 'ec2-user',
+   roles: %w{app db web},
+   ssh_options: {
+       port: 22,
+       user: "ec2-user", # overrides user setting above
+       keys: %w(~/.ssh/ChatSpace.pem),
+       forward_agent: true
+#     auth_methods: %w(publickey password)
+#     # password: "please use keys"
+   }
+
 
 # server-based syntax
 # ======================
