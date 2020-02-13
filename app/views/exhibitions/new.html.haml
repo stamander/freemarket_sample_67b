@@ -42,7 +42,7 @@
       .big-box__main-box__photos#image-box
         = f.fields_for :images do |i|
           .js-file_group{"data-index":i.index}
-            = i.file_field :image, class: 'js-file'
+            = i.file_field :image1, class: 'js-file'
             %br/
             %span.js-remove 削除
       .big-box__main-box__form-box
