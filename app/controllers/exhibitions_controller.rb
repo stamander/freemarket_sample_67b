@@ -9,7 +9,7 @@ class ExhibitionsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.images.new
+    @item.image.new
   end
 
   def create
@@ -25,7 +25,7 @@ class ExhibitionsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
+    if @image.destroy
     redirect_to root_path
     else
       redirect_to exhibition_path(item)
