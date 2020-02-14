@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture, :way_of_delively,:category_id, :quality, :postage, :shipping_date
+  has_many :images, dependent: :destroy
 
-  has_many :image, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
 
-  accepts_nested_attributes_for :image, allow_destroy: true
+
 end

@@ -44,7 +44,7 @@
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
               = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
-        = f.fields_for :image1 do |i|
+        = f.fields_for :images do |i|
           .js-file_group{"data-index":i.index}
             = i.file_field :image1, class: 'js-file'
             %span.js-remove 
@@ -70,7 +70,7 @@
           .big-box__main-box__form-box__category__name カテゴリ
           %h1.need<※必須
           .big-box__main-box__form-box__category__box
-            = f.collection_select :category_id, Category.all, :id, :name
+            = f.collection_select :category_id,Category.all,:id, :name
 
         .big-box__main-box__form-box__brand
           .big-box__main-box__form-box__brand__name ブランド
@@ -113,7 +113,7 @@
           .big-box__main-box__form-box__shipping-date__box
             = f.collection_select :shipping_date, Shipping_date.all, :id, :name
 
-        .big-box__main-box__form-box__SaleStatu
+        .big-box__main-box__form-box__SaleStatu 
           .big-box__main-box__form-box__SaleStatu__name ステータス
           %h1.need<※必須
           .big-box__main-box__form-box__SaleStatu__box
