@@ -16,10 +16,10 @@ class ExhibitionsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save then
+    if @item.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_exhibition_path
     end
   end
 
@@ -37,7 +37,7 @@ class ExhibitionsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:brand_id,:region,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id])
+    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:region,:brand_id,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id])
   end
 
 end
