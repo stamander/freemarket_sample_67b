@@ -1,4 +1,6 @@
 class ExhibitionsController < ApplicationController
+
+
   def update
     if @item.update(item_params)
       redirect_to root_path
@@ -14,10 +16,10 @@ class ExhibitionsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save then
       redirect_to root_path
     else
-      redirect_to new_exhibition_url
+      render :new
     end
   end
 
@@ -25,7 +27,7 @@ class ExhibitionsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
+    if @image.destroy
     redirect_to root_path
     else
       redirect_to exhibition_path(item)
