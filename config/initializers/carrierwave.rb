@@ -15,6 +15,6 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
     config.fog_directory  = 'freemarket67b'
-    config.asset_host = 'https://freemarket67b.s3.amazonaws.com/freemarket67b'
+    config.asset_host = 'https://.s3.amazonaws.com/freemarket67b'
   end
 end
