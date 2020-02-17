@@ -1,0 +1,20 @@
+.big-box__mainbar{
+  margin-left: 30px;
+  &__names-box{
+    &__name{
+      font-weight: bold;
+    }
+
+    &__recently{
+      margin-top: 50px;
+
+    }
+    &__history{
+      margin-top: 100px;
+  
+    }
+    
+
+  }
+ 
+}
