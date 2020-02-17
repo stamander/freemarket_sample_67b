@@ -1,6 +1,5 @@
 class CardsController < ApplicationController
   require "payjp"
-  # before_action :get_user_params, only: [:edit, :confimation, :show]
   before_action :set_card
   before_action :get_payjp_info, only: [:new_create, :create, :destroy, :show]
 
@@ -63,23 +62,6 @@ class CardsController < ApplicationController
     end
   end
 
-
-  # def show
-  #   card = current_user.cards.first
-  #   if card.blank?
-  #     redirect_to root_path
-  #   else 
-  #     customer = Payjp::Customer.retrieve(card.customer_id)
-  #     @default_card_infomation = customer.cards.retrieve(card.card_id)
-  #   end
-  # end
-
-  # def confimation
-  #   card = current_user.cards
-  #   redirect_to action: "show" if card.exists?
-  # end
-
-  private
 
   def get_payjp_info
     Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
