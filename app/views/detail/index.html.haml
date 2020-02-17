@@ -84,6 +84,13 @@
             .text-center
               = link_to 'itempurchase', class: "item-buy-btn" do
                 購入画面に進む
+            .test-delete
+              = link_to '#', method: :delete
+                削除
+            .test-edit
+              = link_to '#', edit_detail_path(detail)
+                編集
+                
             .optionalArea
               %ul.good
                 %li.good_btn
