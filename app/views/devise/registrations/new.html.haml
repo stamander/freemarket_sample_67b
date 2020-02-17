@@ -1,0 +1,54 @@
+%body
+  %header
+    %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+    %nav
+      %h1.main-logo
+        = link_to root_path do
+          = image_tag "logo.png"
+      .keyword
+        %input.keywordbox{placeholder: "キーワードから探す"}/
+        %button.searchBtn{type: "submit"}
+          = image_tag "icon-search 1.png",class:"glass"
+    .linkrecord
+      .linkrecord__left
+        .links
+          = link_to category_index_path,class:"anylink" do
+            カテゴリ
+          = link_to "",class:"anylink",id:"links__right" do
+            ブランド
+          = link_to "detail",class:"anylink",id:"links__right" do
+            商品詳細
+  .middle
+    .center
+      .center__text
+        会員情報
+      .center__describe
+        .contentskawano
+          = form_for(@furimauser,url:furimauser_registration_path,local: true) do |f|
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "ニックネーム"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :nuckName, placeholder: "ニックネームを入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "メールアドレス"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.email_field :email, placeholder: "emailを入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "パスワード"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.password_field :password, placeholder: "パスワードを7文字以上で入力してください"
+            .passwordgroup
+              = f.label "パスワード(確認)"
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+            .submit
+              = f.submit "次へ進む"
