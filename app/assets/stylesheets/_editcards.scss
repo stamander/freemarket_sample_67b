@@ -1,0 +1,136 @@
+.wrrapper {
+  background-color: #EEEEEE	;
+}
+
+.top {
+  height: 130px;
+  width: 100%;
+  &__logo{
+    height: 50px;
+    width: 180px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+}
+
+.card__main {
+  height: 600px;
+  width: 100%;
+  &__area {
+    height: 600px;
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+  }
+  .card__content__title {
+    height: 80px;
+    width: 700px;
+    border-bottom: solid 1px #EEEEEE;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+  }
+  .content__credit-card {
+    height: 520px;
+    &__inner {
+      height: 520px;
+      width: 350px;
+      margin: 30px auto;
+    }
+    .card__label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .card__required {
+      background-color: #3CCACE;
+      color: white;
+      font-size: 12px;
+      padding: 3px 5px 3px 5px;
+      border-radius: 5px 5px;
+      margin-left: 10px;
+    }
+    .input-card-number {
+      height: 45px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 5px 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+    }
+    .card__icons {
+      margin-left: 10px;
+      margin-bottom: 30px;
+    }
+    .cards-expires {
+      display: flex;
+    }
+    .input-month-expire {
+      height: 45px;
+      width: 100px;
+      font-size: 14px;
+      margin: 10px 20px 30px 20px;
+    }
+    .input-year-expire {
+      height: 45px;
+      width: 100px;
+      font-size: 14px;
+      margin: 10px 20px 30px 20px;
+    }
+    .input-cvc-number {
+      height: 45px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 5px 5px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    .content-bottom--add-btn {
+      height: 45px;
+      width: 200px;
+      font-size: 16px;
+      border-radius: 5px 5px;
+      margin-top: 30px;
+      margin-left: 75px;
+      background-color: #3CCACE;
+      color: white;
+    }
+  }
+}
+
+.bot {
+  height: 220px;
+  width: 100%;
+  &__privacy{
+    list-style: none;
+    display: block;
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    padding-top: 40px;
+    font-size: 12px;
+    .policy {
+      margin-right: 15px;
+    }
+    .terms {
+      margin-right: 15px;
+    }
+  }
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    height: 50px;
+    width: 180px;
+    
+  }
+  &__copyright {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    color: #222222;
+  }
+}

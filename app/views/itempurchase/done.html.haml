@@ -1,0 +1,26 @@
+.wrrapper
+  .top
+    = link_to image_tag "logo.png",size: "180x50",class:"top__logo"
+    
+  .pay_info
+    .pay_info__area
+      .pay_info__area__title 購入が完了しました！
+      .pay_info__area__items
+        = image_tag "icon_camera.png",size: "180x180",class:"pay_info__area__items__logo"
+        .pay_info__area__items__title 
+        = @item.name
+        .pay_info__area__items__price 
+        = @item.price
+        .pay_info__area__items__botarea 
+      = link_to root_path, class:"pay_info__area__submit-btn" do
+        TOPに戻る
+
+
+  .bot
+    %ul.bot__privacy
+      %li.policy プライバシーポリシー  
+      %li.terms FURIMA利用規約  
+      %li.transaction 特定商取引に関する表記
+    = link_to image_tag "logo-white.png",size: "180x50",class:"bot__icon"
+    .bot__copyright
+      ©️FURIMA,Inc
