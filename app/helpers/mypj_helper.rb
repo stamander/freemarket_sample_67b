@@ -1,0 +1,2 @@
+module MypjHelper
+end

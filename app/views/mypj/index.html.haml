@@ -1,0 +1,98 @@
+%header
+  %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+  %nav
+    %h1.main-logo
+      = image_tag "logo.png"
+    .keyword
+      %input.keywordbox{placeholder: "キーワードから探す"}/
+      %button.searchBtn{type: "submit"}
+        = image_tag "icon-search 1.png",class:"glass"
+  .linkrecord
+    .linkrecord__left
+      .links
+        = link_to "",class:"anylink" do
+          カテゴリ
+        = link_to "",class:"anylink",id:"links__right" do
+          ブランド
+    .linkrecord__right
+      .links
+        = link_to "",class:"anylink" do
+          ログイン
+        = link_to "",class:"anylink",id:"links__right" do
+          新規会員登録
+
+.big-box
+  .big-box__side-bar
+    .big-box__side-bar__mypj-box
+      .big-box__side-bar__mypj-box__title 設定
+      .big-box__side-bar__mypj-box__contents
+        = link_to "プロフィール","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "発送元・お届け先住所変更","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "支払い方法","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "電話番号の確認","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "ログアウト","#"
+
+  .big-box__mainbar 
+    .big-box__mainbar__names-box 
+      .big-box__mainbar__names-box__name atsushiさんのマイページ
+      .big-box__mainbar__names-box__recently 最近見た商品
+      .big-box__mainbar__names-box__history 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
+      .big-box__mainbar__names-box__recently  photo1
+      .big-box__mainbar__names-box__history sanple
+
+
+
+
+%footer
+  %ul.contents
+    %li.content
+      %h2.content__title FURIMAについて
+      %ul
+        %li
+          = link_to do
+            会社概要（運営会社）
+        %li
+          = link_to do 
+            プライバシーポリシー
+        %li
+          = link_to do
+            FURIMA利用規約
+        %li
+          = link_to do 
+            ポイントに関する特約
+    %li.content
+      %h2.content__title FURIMAを見る
+      %ul
+        %li
+          = link_to do
+            カテゴリー 一覧
+        %li
+          = link_to do
+            ブランド一覧
+    %li.content
+      %h2.content__title ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to do
+            FURIMAガイド
+        %li
+          = link_to do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to do
+            お知らせ
+  .footer_icon
+    = link_to do
+      = image_tag "logo.png",class:"glass"
+    %p ©︎ FURIMA
+  = link_to do 
+    .ExhibitionBtn
+      %span.ExhibitionBtn__text 出品する
+      %br/
+      .ExhibitionBtn__icon 
+        = link_to new_exhibition_path do
+          = image_tag "icon_camera.png",class:"glass"
