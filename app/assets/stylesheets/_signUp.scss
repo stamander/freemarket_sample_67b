@@ -34,6 +34,12 @@
             padding-top: 10px;
             height: 90px;
             width: 380px;
+            input{
+              margin-top: 10px;
+              width: 500px;
+              height: 40px;
+              padding-left: 5px;
+            }
             &__upper {
               height: 22px;
               width: 100%;
@@ -300,15 +306,6 @@
         }
       }
     }
-  }
-}
-
-.passwordgroup{
-  input{
-    margin-top: 10px;
-    width: 500px;
-    height: 40px;
-    padding-left: 5px;
   }
 }
 .submit input{
