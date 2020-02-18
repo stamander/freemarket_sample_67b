@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
   devise_for :furimausers
   get 'category/index'
+  get 'woman/index'
+  get 'men/index'
+  get 'cosme/index'
+  get 'kid/index'
+  get 'entertainment/index'
+  get 'musical_instrument/index'
+  get 'ticket/index'
+  get 'interior/index'
+  get 'smartphone/index'
+  get 'handmade/index'
+  get 'food/index'
+  get 'sport/index'
+  get 'buycicle/index'
+  get 'other/index'
+
 
   root "top#index"
   resources :top, only: :index 

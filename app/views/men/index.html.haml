@@ -4,7 +4,7 @@
     %link{href: "category.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to root_path do
+        = link_to itempurchase_index_path do
           = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
@@ -27,62 +27,32 @@
             新規会員登録
     .nowPlace
       .nowPlace__items
-      = link_to root_path do
-        フリマ
+      = link_to category_index_path do
+        カテゴリ一覧
       .nowPlace__space
         >
       .nowPlace__title
-        カテゴリ一覧
+        レディース
+    
+    .Pickup-category
+      %h2.Pickup__title ピックアップカテゴリー
+      %h3.Pickup__subtitle 新規投稿商品
+      .Pickup__forms
+        - @men.each do |men|
+          .Pickup__form
+            %figure{class: "Pickup__item--image"}
+              - men.images.each do |image|
+                = image_tag image.image1
+            .Pickup__item--body
+              %h3{class: "Pickup__item--name"} 
+                = men.name
+              .Pickup__item--price
+                .Pickup__form__Pickup__item--price__name 
+                  金額#{men.price}円
+                .Pickup__form__Pickup__item--price__icon
+                  %i.fas.fa-star 0
+              %p (税込)
 
-  .categoryList
-    .categoryLink
-      .categoryLink__title
-        カテゴリ一覧
-      .categoryLink__links
-        .categoryLink__linkGenre
-          = link_to woman_index_path,id:"categoryLink1" do
-            レディース
-          %br/
-          = link_to men_index_path,id:"categoryLink2" do
-            メンズ
-          %br/
-          = link_to cosme_index_path,id:"categoryLink3" do
-            コスメ/美容
-        .categoryLink__linkGenre
-          = link_to kid_index_path,id:"categoryLink1" do
-            キッズ
-          %br/
-          = link_to entertainment_index_path ,id:"categoryLink2" do
-            エンタメ
-          %br/
-          = link_to musical_instrument_index_path ,id:"categoryLink2" do
-            楽器
-          %br/
-          = link_to ticket_index_path ,id:"categoryLink2" do
-            チケット
-        .categoryLink__linkGenre
-          = link_to interior_index_path ,id:"categoryLink1" do
-            インテリア
-          %br/
-          = link_to smartphone_index_path ,id:"categoryLink2" do
-            スマホ
-          %br/
-          = link_to handmade_index_path ,id:"categoryLink3" do
-            ハンドメイド
-        .categoryLink__linkGenre
-          = link_to food_index_path ,id:"categoryLink1" do
-            食品
-          %br/
-          = link_to sport_index_path ,id:"categoryLink2" do
-            スポーツ
-          %br/
-          = link_to buycicle_index_path ,id:"categoryLink2" do
-            自転車・オートバイ
-          %br/
-          = link_to other_index_path ,id:"categoryLink3" do
-            その他
-
-        
   .download-Advertisement.download-Advertisement3
     .download-Advertisement3__items
       %p.download-Advertisement3__subtitle 誰でもかんたん、人生を変えるフリマアプリ
