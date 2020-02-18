@@ -82,8 +82,16 @@
                   %th 発想の目安
                   %td 1~2日で発想
             .text-center
-              = link_to new_itempurchase_path, class: "item-buy-btn" do
-                購入画面に進む
+              - if furimauser_signed_in? && current_furimauser.id == @item.furimauser_id
+                = link_to edit_detail_path(@item.id), class: "item-buy-btn" do
+                  編集する
+                  %br
+                = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn" do
+                  削除する
+              - else current_furimauser.id != @seller 
+                = link_to new_itempurchase_path, class: "item-buy-btn" do
+                  購入画面にすすむ
+
             .optionalArea
               %ul.good
                 %li.good_btn
