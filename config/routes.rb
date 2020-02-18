@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :top, only: :index 
   resources :exhibitions, except: :show
   resources :user, only: :index
-  resources :detail, only: :index
+  resources :detail, only: [:index,:edit,:destroy,:update]
   resources :mypj, except: :show
   resources :fprofiles, except: :show
   resources :fadresses, except: :show

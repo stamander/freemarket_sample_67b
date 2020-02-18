@@ -1,0 +1,168 @@
+
+%header
+  %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+  %nav
+    %h1.main-logo
+      = image_tag "logo.png"
+    .keyword
+      %input.keywordbox{placeholder: "キーワードから探す"}/
+      %button.searchBtn{type: "submit"}
+        = image_tag "icon-search 1.png",class:"glass"
+  .linkrecord
+    .linkrecord__left
+      .links
+        = link_to "",class:"anylink" do
+          カテゴリ
+        = link_to "",class:"anylink",id:"links__right" do
+          ブランド
+    .linkrecord__right
+      .links
+        = link_to "",class:"anylink" do
+          ログイン
+        = link_to "",class:"anylink",id:"links__right" do
+          新規会員登録
+
+.big-box
+  .big-box__side-bar
+    .big-box__side-bar__mypj-box
+      .big-box__side-bar__mypj-box__title 設定
+      .big-box__side-bar__mypj-box__contents
+        = link_to "プロフィール","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "発送元・お届け先住所変更","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "支払い方法","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "電話番号の確認","#"
+      .big-box__side-bar__mypj-box__contents 
+        = link_to "ログアウト","#"
+  .form
+  = form_for @item,url: detail_path,method: :patch ,local: true do |f|
+    .big-box__main-box
+      .big-box__main-box__photos#image-box
+        #previews
+          - if @item.persisted?
+            - @item.images.each_with_index do |image, i|
+              = image_tag "", data: { index: i }, width: "100", height: '100'
+        = f.fields_for :images do |i|
+          .js-file_group{"data-index":i.index}
+            = i.file_field :image1, class: 'js-file'
+            %span.js-remove 
+
+
+
+
+      .big-box__main-box__form-box
+        .big-box__main-box__form-box__confirm
+        .big-box__main-box__form-box__names
+          .big-box__main-box__form-box__names__name 商品名 
+          %h1.need<※必須
+          .big-box__main-box__form-box__names__box 
+            = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
+
+        .big-box__main-box__form-box__explain
+          .big-box__main-box__form-box__explain__name 商品説明
+          %h1.need<※必須
+          .big-box__main-box__form-box__explain__box
+            = f.text_area :explain
+
+        .big-box__main-box__form-box__category
+          .big-box__main-box__form-box__category__name カテゴリ
+          %h1.need<※必須
+          .big-box__main-box__form-box__category__box
+            = f.collection_select :category_id,Category.all,:id, :name
+
+        .big-box__main-box__form-box__brand
+          .big-box__main-box__form-box__brand__name ブランド
+          .big-box__main-box__form-box__brand__box
+            = f.text_field :brand_id
+
+        .big-box__main-box__form-box__size
+          .big-box__main-box__form-box__size__name サイズ
+          %h1.need<※必須
+          .big-box__main-box__form-box__size__box
+            = f.text_field :size
+          
+
+        .big-box__main-box__form-box__quarity
+          .big-box__main-box__form-box__quarity__name 商品の状態
+          %h1.need<※必須
+          .big-box__main-box__form-box__quarity__box
+            = f.collection_select :quality, Quality.all, :id, :name
+
+        .big-box__main-box__form-box__shipping-charges
+          .big-box__main-box__form-box__shipping-charges__name 配送料の負担
+          %h1.need<※必須
+          .big-box__main-box__form-box__shipping-charges__box
+            = f.collection_select :postage, Postage.all, :id, :name
+            
+        .big-box__main-box__form-box__way-of-delivary
+          .big-box__main-box__form-box__way-of-delivary__name 配送方法
+          .big-box__main-box__form-box__way-of-delivary__box
+            = f.collection_select :way_of_delivery, Way_of_delivery.all, :id, :name
+
+        .big-box__main-box__form-box__shipping-area
+          .big-box__main-box__form-box__shipping-area__name 発送元の地域
+          %h1.need<※必須
+          .big-box__main-box__form-box__shipping-area__box
+            = f.collection_select :region, Prefecture.all, :id, :name
+
+        .big-box__main-box__form-box__shipping-date
+          .big-box__main-box__form-box__shipping-date__name 発送日の目安
+          %h1.need<※必須
+          .big-box__main-box__form-box__shipping-date__box
+            = f.collection_select :shipping_date, Shipping_date.all, :id, :name
+
+        .big-box__main-box__form-box__SaleStatu 
+          .big-box__main-box__form-box__SaleStatu__name ステータス
+          %h1.need<※必須
+          .big-box__main-box__form-box__SaleStatu__box
+            = f.text_field :SaleStatu
+
+        .big-box__main-box__form-box__price
+          .big-box__main-box__form-box__price__name 商品価格
+          %h1.need<※必須
+          .big-box__main-box__form-box__price__box
+            = f.text_field :price
+        = f.submit "編集する",class:"btn-square-toy"
+    
+%footer
+  %ul.contents
+    %li.content
+      %h2.content__title FURIMAについて
+      %ul
+        %li
+          = link_to do
+            会社概要（運営会社）
+        %li
+          = link_to do 
+            プライバシーポリシー
+        %li
+          = link_to do
+            FURIMA利用規約
+        %li
+          = link_to do 
+            ポイントに関する特約
+    %li.content
+      %h2.content__title FURIMAを見る
+      %ul
+        %li
+          = link_to do
+            カテゴリー 一覧
+        %li
+          = link_to do
+            ブランド一覧
+    %li.content
+      %h2.content__title ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to do
+            FURIMAガイド
+        %li
+          = link_to do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to do
+            お知らせ
+
+

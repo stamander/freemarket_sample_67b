@@ -37,7 +37,7 @@ class ExhibitionsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:region,:brand_id,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id])
+    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:region,:brand_id,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id]).merge(furimauser_id: current_furimauser.id)
   end
 
 end
