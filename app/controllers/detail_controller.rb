@@ -11,14 +11,16 @@ class DetailController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    redirect_to root_path ,notice: '商品を編集しました'
+    if @item.update(item_params)
+      redirect_to root_path ,notice: '商品を編集しました'
+    else
+      redirect_to edit_detail_path
+    end
   end
 
   def destroy
-    if current_furimauser.id == @item.furimauser_id
-      @item.destroy
-      redirect_to "/"
+    if current_furimauser.id == @item.furimauser_id && @item.destroy
+      redirect_to root_path
     else
       redirect_to  detail_index_path
     end
@@ -27,7 +29,7 @@ class DetailController < ApplicationController
   private
 
   def set_item
-    @item = Item.find(5)
+    @item = Item.find(7)
   end
 
   def item_params
