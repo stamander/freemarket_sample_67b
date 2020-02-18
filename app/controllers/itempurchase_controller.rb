@@ -10,6 +10,7 @@ class ItempurchaseController < ApplicationController
       redirect_to edit_card_path(current_furimauser.id)
     else 
     @item = Item.find(1)
+    @image = Image.find(1)
     Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = customer.cards.retrieve(@card.card_id)
@@ -46,6 +47,7 @@ class ItempurchaseController < ApplicationController
 
   def done
     @item = Item.find(1)
+    @image = Image.find(1)
   end
 
   private

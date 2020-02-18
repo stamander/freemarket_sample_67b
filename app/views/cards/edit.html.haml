@@ -28,7 +28,7 @@
               %br
               .cards-expires
                 .cards-expire__wrap
-                  %select#exp_month{name: "exp_manth", type: "text"}
+                  %select#exp_month{name: "exp_manth", type: "text",class: "expmonth"}
                     %option{value: ""} --
                     %option{value: "1"}01
                     %option{value: "2"}02
@@ -44,7 +44,7 @@
                     %option{value: "12"}12
                   %span.expire-text 月
                 .cards-expire__wrap
-                  %select#exp_year{name: "exp_year", type: "text"}
+                  %select#exp_year{name: "exp_year", type: "text", class: "expyear"}
                     %option{value: ""} --
                     %option{value: "2019"}19
                     %option{value: "2020"}20
@@ -64,7 +64,7 @@
               %br
               = text_field_tag "cvc","", type: 'text',id: "payment_card_cvc", class: 'input-cvc-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
             .content-bottom#card_token
-              = submit_tag '編集する', class: 'content-bottom--add-btn', id: 'token_submit'
+              = submit_tag '登録する', class: 'content-bottom--add-btn', id: 'token_submit'
 
   .bot
     %ul.bot__privacy

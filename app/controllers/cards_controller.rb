@@ -58,10 +58,15 @@ class CardsController < ApplicationController
         @card_src = "icon_discover.png"
       end
     else
-      redirect_to edit_card_path
+      redirect_to confirmation_cards_path
     end
   end
 
+  def confirmation
+
+  end
+
+  private
 
   def get_payjp_info
     Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"

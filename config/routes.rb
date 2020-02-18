@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   resources :user, only: :index
   resources :detail, only: :index
   resources :mypj, only: :index
-  resources :cards, only: [:new,:create,:edit,:show,:destroy] 
+  resources :cards, only: [:new,:create,:edit,:show,:destroy] do
+    collection do
+      get 'confirmation', to: 'cards#confirmation'
+    end
+  end
   resources :itempurchase, only: [:index, :new] do
     collection do
       post 'pay', to: 'itempurchase#pay'

@@ -66,6 +66,19 @@
     }
     .cards-expires {
       display: flex;
+      margin-bottom: 30px;
+    }
+    .expmonth{
+      height: 45px;
+      width: 100px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .expyear {
+      height: 45px;
+      width: 100px;
+      font-size: 14px;
+      margin-top: 10px;
     }
     .input-month-expire {
       height: 45px;
