@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20200217083538) do
   end
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+
+    t.integer  "prefecture_id"
+    t.string   "city"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+
     t.string   "post_number", null: false
     t.string   "prefecture",  null: false
     t.string   "city",        null: false
@@ -67,6 +73,7 @@ ActiveRecord::Schema.define(version: 20200217083538) do
     t.text     "text",       limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+
   end
 
   create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -158,15 +165,6 @@ ActiveRecord::Schema.define(version: 20200217083538) do
   create_table "tops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nick_name",     null: false
-    t.string   "email_address", null: false
-    t.string   "password",      null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "nickName"
   end
 
   add_foreign_key "account_adresses", "furimausers"

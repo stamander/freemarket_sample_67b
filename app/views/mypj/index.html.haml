@@ -29,7 +29,10 @@
       .big-box__side-bar__mypj-box__contents 
         = link_to "発送元・お届け先住所変更",fadresses_path
       .big-box__side-bar__mypj-box__contents 
-        = link_to "支払い方法", card_path(current_furimauser.id)
+        - if furimauser_signed_in?
+          = link_to "支払い方法", card_path(current_furimauser.id)
+        - else
+          = link_to "支払い方法", new_furimauser_session_path
       .big-box__side-bar__mypj-box__contents 
         = link_to "電話番号の確認","#"
       .big-box__side-bar__mypj-box__contents 
