@@ -7,7 +7,6 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find_by(furimauser_id: current_furimauser.id)
     redirect_to card_path if @card.present?
   end
 
@@ -69,11 +68,11 @@ class CardsController < ApplicationController
   private
 
   def get_payjp_info
-    Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
   def set_card
-    @card = Card.where(furimauser_id: current_furimauser.id).first if Card.where(furimauser_id: current_furimauser.id).present?
+    @card = Card.find_by(furimauser_id: current_furimauser.id) if Card.where(furimauser_id: current_furimauser.id).present?
   end
 
   def get_user_params

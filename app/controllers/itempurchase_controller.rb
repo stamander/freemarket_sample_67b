@@ -1,17 +1,17 @@
 class ItempurchaseController < ApplicationController
   require "payjp"
-  
+  before_action :set_card, only: [:pay,:new]
+  before_action :get_payjp_info, only: [:new, :pay]
+
   def index
   end
 
   def new
-    @card = Card.where(furimauser_id: current_furimauser.id).first if Card.where(furimauser_id: current_furimauser.id).present?
     if @card.blank?
       redirect_to edit_card_path(current_furimauser.id)
     else 
     @item = Item.find(1)
     @image = Image.find(1)
-    Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = customer.cards.retrieve(@card.card_id)
     @card_brand = @card_information.brand
@@ -34,8 +34,6 @@ class ItempurchaseController < ApplicationController
 
   def pay
     @item = Item.find(1)
-    @card = Card.find_by(furimauser_id: current_furimauser.id) if Card.where(furimauser_id: current_furimauser.id).present?
-    Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
     Payjp::Charge.create(
       currency: 'jpy', 
       amount: @item.price, 
@@ -58,4 +56,14 @@ class ItempurchaseController < ApplicationController
       :price,
     )
   end
+
+  def set_card
+    @card = Card.find_by(furimauser_id: current_furimauser.id) if Card.where(furimauser_id: current_furimauser.id).present?
+  end
+
+  def get_payjp_info
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+  end
+
+
 end
