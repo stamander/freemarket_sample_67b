@@ -7,10 +7,12 @@
       .contents__area__title 購入内容の確認
       %section.contents__area__item-info
         .contents__area__item__inner
-          = image_tag "icon_camera.png",class:"contents__area__item__logo"
+          = image_tag @image.image1_url,class:"contents__area__item__logo"
           %ul.contents__area__item__about
-            %li.contents__area__item__title ＜♦︎新品♦︎ iPhoneケース ステラ・ルー＞
-            %li.contents__area__item__price ＜¥ 1,200（税込み）送料込み＞
+            %li.contents__area__item__title 
+            = @item.name
+            %li.contents__area__item__price
+            = @item.price
 
       %section.contents__buy-info
         .contents__buy-info__inner
@@ -18,20 +20,24 @@
           .contents__buy-info-price__table
             .contents__buy-info-price__table__info
               .contents__buy-info-price__table__intro 支払い金額
-              .contents__buy-info-price__table__price ¥ 1,200
+              .contents__buy-info-price__table__price 
+              = @item.price
             .contents__buy-info-price__table__point 
             %input.point__checkbox{type:"checkbox", value:"0"}ポイントを使用 (所持ポイント: P0)
 
           .contents__buy-info-pay__table
             .contents__buy-info-pay__table__info 
-              = link_to "", class:"card__info" do
+              = link_to card_path(id:current_furimauser.id), class:"card__info" do
                 変更する
             .card__method 支払い方法
-            .card__name クレジットカード
-            .card__number ************5198
-            .card__deadline 有効期限 03 / 24
-            .card__type visa
+            = image_tag src=@card_src, width: '26', height: '20', alt: @card_brand, id: "card_image"
 
+            .card__number 
+            = "**** **** **** " + @card_information.last4
+            .card__deadline 有効期限
+            = @card_information.exp_month.to_s
+            = @card_information.exp_year.to_s.slice(2,3)
+           
           .contents__buy-info-user__table
             .contents__buy-info-user__table__info 
               = link_to "", class:"user__info" do
@@ -43,7 +49,7 @@
 
           .contents__buy-info-submit__table
 
-            = link_to "", class:"contents__buy-info-submit__table__submit-btn" do
+            = link_to pay_itempurchase_index_path, method: :post,class:"contents__buy-info-submit__table__submit-btn" do
               購入する
 
   .bot
