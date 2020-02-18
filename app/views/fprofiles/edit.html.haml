@@ -1,0 +1,62 @@
+%body
+  %header
+    %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+    %nav
+      %h1.main-logo
+        = link_to root_path do
+          = image_tag "logo.png"
+      .keyword
+        %input.keywordbox{placeholder: "キーワードから探す"}/
+        %button.searchBtn{type: "submit"}
+          = image_tag "icon-search 1.png",class:"glass"
+    .linkrecord
+      .linkrecord__left
+        .links
+          = link_to "",class:"anylink" do
+            新規作成
+          = link_to "accountProfiles/edit",class:"anylink",id:"links__right" do
+            編集
+  .middle
+    .center
+      .center__text
+        個人情報入力
+      .center__describe
+        = form_for @profile,url:fprofiles_path,local: true do |f|
+          .contentskawano
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "苗字"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :first_name, placeholder: "苗字を入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "名前"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :last_name, placeholder: "名前を入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "苗字（カナ）"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :first_name_kana, placeholder: "苗字をカタカナで入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "名前（カナ）"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :last_name_kana, placeholder: "名前をカタカナで入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "電話番号"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :phone_number, placeholder: "電話番号を入力してください"
+            .submit
+              = f.submit "更新"

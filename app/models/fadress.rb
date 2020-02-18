@@ -1,0 +1,2 @@
+class Fadress < ApplicationRecord
+end

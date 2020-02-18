@@ -1,0 +1,114 @@
+.wrrapper {
+  background-color: #EEEEEE	;
+}
+
+.top {
+  height: 130px;
+  width: 100%;
+  &__logo{
+    display: block;
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+  &__logo img{
+    height: 50px;
+    width: 180px;
+  }
+}
+
+.session__main {
+  height: 600px;
+  width: 100%;
+  &__area {
+    height: 600px;
+    width: 480px;
+    background-color: white;
+    margin: 0 auto;
+    &__new {
+      height: 120px;
+      width: 480px;
+      text-align: center;
+      border-bottom: solid 1px #EEEEEE;
+      &__info {
+        padding-top: 25px;
+        padding-bottom: 15px;
+        font-size: 14px;
+      }
+      &__btn {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #3399FF;
+        padding: 15px 115px 15px 115px;
+      }
+    }
+    &__form {
+      text-align: center;
+      .field-label {
+        margin-top: 50px;
+      }
+      .field input{
+        font-size: 15px;
+        width: 250px;
+        height: 30px;
+        padding: 5px 0 5px 5px;
+      }
+      #user_email {
+        margin-top: 20px;
+        height: 40px;
+        width: 300px;
+        font-size: 16px;
+      }
+      #user_password {
+        margin-top: 20px;
+        height: 40px;
+        width: 300px;
+        font-size: 16px;
+      }
+      .submit__action {
+        margin-top: 80px;
+        padding: 15px 120px 15px 120px;
+        background-color: #3CCACE;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.bot {
+  height: 220px;
+  width: 100%;
+  &__privacy{
+    list-style: none;
+    display: block;
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    padding-top: 40px;
+    font-size: 12px;
+    .policy {
+      margin-right: 15px;
+    }
+    .terms {
+      margin-right: 15px;
+    }
+  }
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  &__icon img{
+    height: 50px;
+    width: 180px;
+  }
+  &__copyright {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    color: #222222;
+  }
+}

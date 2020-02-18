@@ -2,7 +2,10 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-    
+
+  def index
+    @furimauser = Furimauser.all
+  end
   private
 
   def basic_auth

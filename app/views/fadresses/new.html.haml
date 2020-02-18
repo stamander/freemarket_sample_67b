@@ -1,0 +1,64 @@
+%body
+  %header
+    %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+    %nav
+      %h1.main-logo
+        = link_to root_path do
+          = image_tag "logo.png"
+      .keyword
+        %input.keywordbox{placeholder: "キーワードから探す"}/
+        %button.searchBtn{type: "submit"}
+          = image_tag "icon-search 1.png",class:"glass"
+    .linkrecord
+      .linkrecord__left
+        .links
+          = link_to category_index_path,class:"anylink" do
+            カテゴリ
+          = link_to "",class:"anylink",id:"links__right" do
+            ブランド
+          = link_to "detail",class:"anylink",id:"links__right" do
+            商品詳細
+  .middle
+    .center
+      .center__text
+        配送先入力
+      .center__describe
+        .contentskawano
+          = form_for(@adress,url:fadresses_path,local: true) do |f|
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "郵便番号"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :post_number, placeholder: "例)123-4567"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "都道府県"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :prefecture, placeholder: "都道府県を入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "市町村"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :city, placeholder: "市町村を入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "番地"
+                .passwordgroup__upper__require
+                  = f.label "必須"
+              = f.text_field :town, placeholder: "番地を入力してください"
+            .passwordgroup
+              .passwordgroup__upper
+                .passwordgroup__upper__label
+                  = f.label "建物名"
+              = f.text_field :building, placeholder: "建物名を入力してください"
+            .submit
+              = f.submit "保存"
+
+
