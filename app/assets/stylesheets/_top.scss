@@ -285,7 +285,6 @@ ul{
   &__form{
     width: 220px;
     display: inline-block;
-    float: left;
   }
   &__item{
     &--image{
@@ -432,4 +431,8 @@ footer{
     right: 40px;
     bottom: 10px;
   }
+}
+
+.personB{
+  margin-right: 10px;
 }
