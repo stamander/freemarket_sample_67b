@@ -37,31 +37,6 @@ ActiveRecord::Schema.define(version: 20200217083538) do
   end
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "post_number", null: false
-    t.string   "prefecture",  null: false
-    t.string   "city",        null: false
-    t.string   "town",        null: false
-    t.string   "building"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "use_id",                   null: false
-    t.integer  "item_id",                  null: false
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-=======
-ActiveRecord::Schema.define(version: 20200217044853) do
-
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
     t.string   "city"
     t.datetime "created_at",    null: false
@@ -144,20 +119,10 @@ ActiveRecord::Schema.define(version: 20200217044853) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nick_name",     null: false
-    t.string   "email_address", null: false
-    t.string   "password",      null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "nickName"
-  end
-
   add_foreign_key "account_adresses", "furimausers"
   add_foreign_key "account_profiles", "furimausers"
+  add_foreign_key "cards", "furimausers"
   add_foreign_key "fadresses", "furimausers"
   add_foreign_key "fprofiles", "furimausers"
-=======
-  add_foreign_key "cards", "furimausers"
   add_foreign_key "images", "items"
 end
