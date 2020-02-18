@@ -1,0 +1,38 @@
+.main__confirmation {
+  height: 400px;
+  width: 100%;
+  &__inner {
+    background-color: white;
+    height: 350px;
+    width: 700px;
+    text-align: center;
+  }
+}
+
+.main__content {
+  background-color: white;
+  height: 350px;
+  width: 700px;
+  margin: 50px auto;
+}
+.chapter__container {
+  .chapter__head {
+    padding-bottom: 30px;
+    border-bottom: solid 1px #EEEEEE;
+  }
+  .sub__head {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+  .red__btn {
+    border: solid 1px #3CCACE;
+    padding: 10px 30px 10px 30px;
+    color: #3CCACE;
+  }
+  .not__regist {
+    font-size: 14px;
+    margin-top: 40px;
+    text-align: right;
+    margin-right: 150px;
+  }
+}

@@ -22,7 +22,7 @@
       .linkrecord__right
         .links
           = link_to "ログアウト" .html_safe, destroy_furimauser_session_path, method: :delete,class:"anylink"
-          = link_to "",class:"anylink" do
+          = link_to "furimausers/sign_in",class:"anylink" do
             ログイン
           = link_to "furimausers/sign_up", class:"anylink",id:"links__right" do
             新規会員登録

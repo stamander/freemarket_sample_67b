@@ -1,0 +1,1 @@
+export PAYJP_PRIVATE_KEY="sk_test_ceb74bf1068e640ddcefbfe2"

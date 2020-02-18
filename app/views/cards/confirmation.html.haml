@@ -30,22 +30,29 @@
       .big-box__side-bar__mypj-box__contents 
         = link_to "発送元・お届け先住所変更","#"
       .big-box__side-bar__mypj-box__contents 
-        = link_to "支払い方法", card_path(current_furimauser.id)
+        = link_to "支払い方法", "/cards/edit"
       .big-box__side-bar__mypj-box__contents 
         = link_to "電話番号の確認","#"
       .big-box__side-bar__mypj-box__contents 
         = link_to "ログアウト","#"
 
   .big-box__mainbar 
-    .big-box__mainbar__names-box 
-      .big-box__mainbar__names-box__name atsushiさんのマイページ
-      .big-box__mainbar__names-box__recently 最近見た商品
-      .big-box__mainbar__names-box__history 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
-      .big-box__mainbar__names-box__recently  photo1
-      .big-box__mainbar__names-box__history sanple
-
-
-
+    .main__confirmation
+      .main__confirmation__inner
+        .main__content
+          %section.chapter__container
+            %h2.chapter__head 支払い方法
+            .payment__main
+              .payment__list
+                .payment__list__content
+                  %h3.sub__head クレジットカード登録なし
+              .add__card
+                .payment__list__content
+                  = link_to edit_card_path(current_furimauser), class: "red__btn", data: {"turbolinks" => false} do
+                    %i
+                    追加する
+              .not__regist
+                %span 支払い方法について
 
 %footer
   %ul.contents

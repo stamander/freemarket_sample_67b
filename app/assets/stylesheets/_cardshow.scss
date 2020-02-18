@@ -1,0 +1,29 @@
+.main_box {
+  width: 700px;
+  margin: 0 auto;
+}
+.showcard__content__title {
+  height: 80px;
+  border-bottom: solid 1px #EEEEEE;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px;
+}
+.content__credit-cards__list{
+  list-style: none;
+  border-bottom: solid 1px #EEEEEE;
+  padding-bottom: 60px;
+}
+.showcard__content__credit-cards {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+.content__credit-cards__list__submit {
+  width: 100px;
+  margin-top: 50px;
+  color: #3CCACE;
+  font-size: 20px;
+}
