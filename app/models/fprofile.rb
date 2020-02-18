@@ -1,0 +1,2 @@
+class Fprofile < ApplicationRecord
+end

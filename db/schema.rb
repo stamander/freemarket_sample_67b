@@ -10,15 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200215042118) do
+ActiveRecord::Schema.define(version: 20200217083538) do
+
+  create_table "account_adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "furimauser_id"
+    t.string   "post_number",   null: false
+    t.string   "prefecture",    null: false
+    t.string   "city",          null: false
+    t.string   "town",          null: false
+    t.string   "building"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["furimauser_id"], name: "index_account_adresses_on_furimauser_id", using: :btree
+  end
+
+  create_table "account_profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "furimauser_id"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "first_name_kana", null: false
+    t.string   "last_name_kana",  null: false
+    t.string   "phone_number",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["furimauser_id"], name: "index_account_profiles_on_furimauser_id", using: :btree
+  end
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "use_id",      null: false
     t.string   "post_number", null: false
+    t.string   "prefecture",  null: false
     t.string   "city",        null: false
     t.string   "town",        null: false
-    t.string   "building",    null: false
-    t.string   "prefecture",  null: false
+    t.string   "building"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -50,6 +73,30 @@ ActiveRecord::Schema.define(version: 20200215042118) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "fadresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "furimauser_id"
+    t.string   "post_number",   null: false
+    t.string   "prefecture",    null: false
+    t.string   "city",          null: false
+    t.string   "town",          null: false
+    t.string   "building"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["furimauser_id"], name: "index_fadresses_on_furimauser_id", using: :btree
+  end
+
+  create_table "fprofiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "furimauser_id"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "first_name_kana", null: false
+    t.string   "last_name_kana",  null: false
+    t.string   "phone_number",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["furimauser_id"], name: "index_fprofiles_on_furimauser_id", using: :btree
+  end
+
   create_table "furimausers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -75,7 +122,7 @@ ActiveRecord::Schema.define(version: 20200215042118) do
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
     t.integer  "category_id",                   null: false
-    t.integer  "brand_id",                      null: false
+    t.integer  "brand_id"
     t.text     "explain",         limit: 65535, null: false
     t.integer  "postage",                       null: false
     t.string   "region",                        null: false
@@ -113,5 +160,9 @@ ActiveRecord::Schema.define(version: 20200215042118) do
     t.string   "nickName"
   end
 
+  add_foreign_key "account_adresses", "furimausers"
+  add_foreign_key "account_profiles", "furimausers"
+  add_foreign_key "fadresses", "furimausers"
+  add_foreign_key "fprofiles", "furimausers"
   add_foreign_key "images", "items"
 end

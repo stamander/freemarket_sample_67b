@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :itempurchase, only: :index
   resources :user, only: :index
   resources :detail, only: :index
-  resources :mypj, only: :index
+  resources :mypj, except: :show
+  resources :fprofiles, except: :show
+  resources :fadresses, except: :show
 end

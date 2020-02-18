@@ -1,0 +1,48 @@
+%body
+  %header
+    %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
+    %nav
+      %h1.main-logo
+        = link_to root_path do
+          = image_tag "logo.png"
+      .keyword
+        %input.keywordbox{placeholder: "キーワードから探す"}/
+        %button.searchBtn{type: "submit"}
+          = image_tag "icon-search 1.png",class:"glass"
+    .linkrecord
+      .linkrecord__left
+        .links
+          = link_to new_fadress_path,class:"createB" do
+            新規作成
+          = link_to "fadresses/#{current_furimauser.id}/edit",class:"editB" do
+            編集
+  .profileForm
+    - @adress.first(1).each do |adress|
+      .profileForm__title
+        配送先情報
+      .profileForm__items
+        .profileForm__item
+          .profileForm__item__name    
+            郵便番号
+          .profileForm__item__information  
+            %input{disabled:"disabled", type:"“text”",value:"#{adress.post_number}"}/
+        .profileForm__item
+          .profileForm__item__name    
+            都道府県
+          .profileForm__item__information  
+            %input{disabled:"disabled", type:"“text”",value:"#{adress.prefecture}"}/
+        .profileForm__item
+          .profileForm__item__name    
+            市町村
+          .profileForm__item__information  
+            %input{disabled:"disabled", type:"“text”",value:"#{adress.city}"}/
+        .profileForm__item
+          .profileForm__item__name    
+            番地
+          .profileForm__item__information  
+            %input{disabled:"disabled", type:"“text”",value:"#{adress.town}"}/
+        .profileForm__item
+          .profileForm__item__name
+            建物名
+          .profileForm__item__information  
+            %input{disabled:"disabled", type:"“text”",value:"#{adress.building}"}/
