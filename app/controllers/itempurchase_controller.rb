@@ -34,7 +34,7 @@ class ItempurchaseController < ApplicationController
 
   def pay
     @item = Item.find(1)
-    @card = Card.where(furimauser_id: current_furimauser.id).first if Card.where(furimauser_id: current_furimauser.id).present?
+    @card = Card.find_by(furimauser_id: current_furimauser.id) if Card.where(furimauser_id: current_furimauser.id).present?
     Payjp.api_key = "sk_test_ceb74bf1068e640ddcefbfe2"
     Payjp::Charge.create(
       currency: 'jpy', 
