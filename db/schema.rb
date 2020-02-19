@@ -36,22 +36,6 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.index ["furimauser_id"], name: "index_account_profiles_on_furimauser_id", using: :btree
   end
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "post_number", null: false
-    t.string   "prefecture",  null: false
-    t.string   "city",        null: false
-    t.string   "town",        null: false
-    t.string   "building"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "furimauser_id", null: false
     t.string   "customer_id",   null: false
@@ -59,27 +43,6 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["furimauser_id"], name: "index_cards_on_furimauser_id", using: :btree
-  end
-
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "use_id",                   null: false
-    t.integer  "item_id",                  null: false
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "credits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "use_id",          null: false
-    t.integer  "card_number"
-    t.integer  "year_deadline",   null: false
-    t.integer  "month_deadline",  null: false
-    t.integer  "security_number", null: false
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "card_name",       null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "fadresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -152,29 +115,9 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.index ["furimauser_id"], name: "index_items_on_furimauser_id", using: :btree
   end
 
-  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "first_name_kana", null: false
-    t.string   "last_name_kana",  null: false
-    t.integer  "user_id",         null: false
-    t.integer  "phone_number",    null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "tops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "nick_name",     null: false
-    t.string   "email_address", null: false
-    t.string   "password",      null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "nickName"
   end
 
   add_foreign_key "account_adresses", "furimausers"
