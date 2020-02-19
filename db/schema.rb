@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200218072251) do
-ActiveRecord::Schema.define(version: 20200218083857) do
+ActiveRecord::Schema.define(version: 20200220093133) do
 
   create_table "account_adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "furimauser_id"
@@ -51,10 +50,6 @@ ActiveRecord::Schema.define(version: 20200218083857) do
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "prefecture_id"
-    t.string   "city"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -65,6 +60,7 @@ ActiveRecord::Schema.define(version: 20200218083857) do
     t.datetime "updated_at",    null: false
     t.index ["furimauser_id"], name: "index_cards_on_furimauser_id", using: :btree
   end
+
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "use_id",                   null: false
     t.integer  "item_id",                  null: false
@@ -85,7 +81,7 @@ ActiveRecord::Schema.define(version: 20200218083857) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
-  
+
   create_table "fadresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "furimauser_id"
     t.string   "post_number",   null: false
@@ -138,24 +134,33 @@ ActiveRecord::Schema.define(version: 20200218083857) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                           null: false
-    t.integer  "price",                          null: false
-    t.integer  "category_id",                    null: false
+    t.string   "name",                          null: false
+    t.integer  "price",                         null: false
+    t.integer  "category_id",                   null: false
     t.integer  "brand_id"
-    t.text     "explain",          limit: 65535, null: false
-    t.integer  "postage",                        null: false
-    t.string   "region",                         null: false
-    t.string   "shipping_date",                  null: false
-    t.string   "size",                           null: false
-    t.string   "way_of_delivery",                null: false
-    t.string   "quality",                        null: false
-    t.string   "SaleStatu",                      null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "furimauser_id_id"
+    t.text     "explain",         limit: 65535, null: false
+    t.integer  "postage",                       null: false
+    t.string   "region",                        null: false
+    t.string   "shipping_date",                 null: false
+    t.string   "size",                          null: false
+    t.string   "way_of_delivery",               null: false
+    t.string   "quality",                       null: false
+    t.string   "SaleStatu",                     null: false
     t.integer  "furimauser_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["furimauser_id"], name: "index_items_on_furimauser_id", using: :btree
-    t.index ["furimauser_id_id"], name: "index_items_on_furimauser_id_id", using: :btree
+  end
+
+  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "first_name_kana", null: false
+    t.string   "last_name_kana",  null: false
+    t.integer  "user_id",         null: false
+    t.integer  "phone_number",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "tops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
