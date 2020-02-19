@@ -3,7 +3,6 @@ class ItempurchaseController < ApplicationController
   before_action :set_card, only: [:pay,:new]
   before_action :set_item
   before_action :get_payjp_info, only: [:new, :pay]
-
   def index
   end
 
@@ -11,7 +10,7 @@ class ItempurchaseController < ApplicationController
     if @card.blank?
       redirect_to edit_card_path(current_furimauser.id)
     else 
-    @image = Image.find(params[:id])
+    @image = Image.find(1)
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = customer.cards.retrieve(@card.card_id)
     @card_brand = @card_information.brand
@@ -39,21 +38,15 @@ class ItempurchaseController < ApplicationController
       card: params['payjp-token'],
       customer: @card.customer_id
       )
+      @item.update(buyer_id: current_furimauser.id)
     redirect_to action: 'done'
   end
 
   def done
-    @image = Image.find(params[:id])
+    @image = Image.find(1)
   end
 
   private
-
-  def item_params
-    params.require(:item).permit(
-      :name,
-      :price,
-    )
-  end
 
   def set_card
     @card = Card.find_by(furimauser_id: current_furimauser.id) if Card.where(furimauser_id: current_furimauser.id).present?
@@ -64,7 +57,7 @@ class ItempurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find_by(1)
   end
 
 end
