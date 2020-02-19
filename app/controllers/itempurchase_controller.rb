@@ -11,7 +11,7 @@ class ItempurchaseController < ApplicationController
     if @card.blank?
       redirect_to edit_card_path(current_furimauser.id)
     else 
-    @image = Image.find(1)
+    @image = Image.find(params[:id])
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = customer.cards.retrieve(@card.card_id)
     @card_brand = @card_information.brand
@@ -43,7 +43,7 @@ class ItempurchaseController < ApplicationController
   end
 
   def done
-    @image = Image.find(1)
+    @image = Image.find(params[:id])
   end
 
   private
@@ -64,7 +64,7 @@ class ItempurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(7)
+    @item = Item.find(params[:id])
   end
 
 end
