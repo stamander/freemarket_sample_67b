@@ -4,7 +4,7 @@
     %link{href: "category.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to itempurchase_index_path do
+        = link_to root_path do
           = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
@@ -19,12 +19,7 @@
             ブランド
           = link_to detail_index_path,class:"anylink",id:"links__right" do
             商品詳細
-      .linkrecord__right
-        .links
-          = link_to "",class:"anylink" do
-            ログイン
-          = link_to user_index_path class:"anylink",id:"links__right" do
-            新規会員登録
+
     .nowPlace
       .nowPlace__items
       = link_to category_index_path do
@@ -32,7 +27,7 @@
       .nowPlace__space
         >
       .nowPlace__title
-        レディース
+        メンズ
     
     .Pickup-category
       %h2.Pickup__title ピックアップカテゴリー

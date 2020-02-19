@@ -13,6 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :way_of_delivery,null: false
       t.string :quality,null: false
       t.string :SaleStatu,null:false
+      t.references :furimauser, foreign_key: true
       t.timestamps
     end
   end

@@ -29,7 +29,7 @@ class DetailController < ApplicationController
   private
 
   def set_item
-    @item = Item.find(7)
+    @item = Item.find(1)
   end
 
   def item_params
