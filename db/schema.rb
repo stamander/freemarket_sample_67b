@@ -109,9 +109,6 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.integer  "category_id",                      null: false
     t.integer  "brand_id"
     t.text     "explain",            limit: 65535, null: false
-    t.integer  "postage",                          null: false
-    t.string   "region",                           null: false
-    t.string   "shipping_date",                    null: false
     t.integer  "postage_id",                       null: false
     t.integer  "region_id",                        null: false
     t.integer  "shipping_date_id",                 null: false
@@ -121,7 +118,6 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.string   "SaleStatu",                        null: false
     t.integer  "furimauser_id"
     t.integer  "buyer_id"
-    t.integer  "saler_id",                         null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.index ["furimauser_id"], name: "index_items_on_furimauser_id", using: :btree
