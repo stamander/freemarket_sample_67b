@@ -1,8 +1,8 @@
 %header
-  %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
   %nav
     %h1.main-logo
-      = image_tag "logo.png"
+      = link_to '/' do
+        = image_tag "logo.png"
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
