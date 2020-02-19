@@ -4,6 +4,7 @@
   %nav
     %h1.main-logo
       = image_tag "logo.png"
+        = link_to root_path 
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
@@ -11,15 +12,15 @@
   .linkrecord
     .linkrecord__left
       .links
-        = link_to "",class:"anylink" do
+        = link_to category, class:"anylink" do
           カテゴリ
         = link_to "",class:"anylink",id:"links__right" do
           ブランド
     .linkrecord__right
       .links
-        = link_to "",class:"anylink" do
+        = link_to new_furimauser_session_path, class:"anylink" do
           ログイン
-        = link_to "",class:"anylink",id:"links__right" do
+        = link_to ew_furimauser_registration_path, class:"anylink",id:"links__right" do
           新規会員登録
 .main-detail
   .showMain
