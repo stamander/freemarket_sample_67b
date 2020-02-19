@@ -15,10 +15,17 @@
         .links
           = link_to category_index_path,class:"anylink" do
             カテゴリ
-          = link_to "",class:"anylink",id:"links__right" do
+          = link_to "", class:"anylink",id:"links__right" do
             ブランド
-          = link_to detail_index_path,class:"anylink",id:"links__right" do
+          = link_to detail_index_path, class:"anylink",id:"links__right" do
             商品詳細
+      .linkrecord__right
+        .links
+          = link_to new_furimauser_session_path, class:"anylink" do
+            ログイン
+          = link_to new_furimauser_registration_path, class:"anylink",id:"links__right" do
+            新規会員登録
+
     .nowPlace
       .nowPlace__items
       = link_to category_index_path do

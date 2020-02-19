@@ -2,7 +2,8 @@
   %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
   %nav
     %h1.main-logo
-      = image_tag "logo.png"
+      = link_to root_path do
+        = image_tag "logo.png"
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
@@ -10,9 +11,9 @@
   .linkrecord
     .linkrecord__left
       .links
-        = link_to "",class:"anylink" do
+        = link_to category_index_path, class:"anylink" do
           カテゴリ
-        = link_to "",class:"anylink",id:"links__right" do
+        = link_to "", class:"anylink",id:"links__right" do
           ブランド
     .linkrecord__right
       .links
@@ -25,9 +26,9 @@
     .big-box__side-bar__mypj-box
       .big-box__side-bar__mypj-box__title 設定
       .big-box__side-bar__mypj-box__contents
-        = link_to "プロフィール",fprofiles_path
+        = link_to "プロフィール", new_fprofile_path
       .big-box__side-bar__mypj-box__contents 
-        = link_to "発送元・お届け先住所変更",fadresses_path
+        = link_to "発送元・お届け先住所変更", fadresses_path
       .big-box__side-bar__mypj-box__contents 
         - if furimauser_signed_in?
           = link_to "支払い方法", card_path(current_furimauser.id)
