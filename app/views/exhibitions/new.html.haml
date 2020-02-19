@@ -84,7 +84,7 @@
           .big-box__main-box__form-box__quarity__name 商品の状態
           %h1.need<※必須
           .big-box__main-box__form-box__quarity__box
-            = f.collection_select :quality_id, Quality.all, :id, :name
+            = f.collection_select :quality_id, Quality.all, :id, :name, class:"big-box__main-box__form-box__quarity__box"
 
         .big-box__main-box__form-box__shipping-charges
           .big-box__main-box__form-box__shipping-charges__name 配送料の負担
