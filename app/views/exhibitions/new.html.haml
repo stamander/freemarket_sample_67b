@@ -88,30 +88,30 @@
           .big-box__main-box__form-box__quarity__name 商品の状態
           %h1.need<※必須
           .big-box__main-box__form-box__quarity__box
-            = f.collection_select :quality, Quality.all, :id, :name
+            = f.collection_select :quality_id, Quality.all, :id, :name
 
         .big-box__main-box__form-box__shipping-charges
           .big-box__main-box__form-box__shipping-charges__name 配送料の負担
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-charges__box
-            = f.collection_select :postage, Postage.all, :id, :name
+            = f.collection_select :postage_id, Postage.all, :id, :name
             
         .big-box__main-box__form-box__way-of-delivary
           .big-box__main-box__form-box__way-of-delivary__name 配送方法
           .big-box__main-box__form-box__way-of-delivary__box
-            = f.collection_select :way_of_delivery, Way_of_delivery.all, :id, :name
+            = f.collection_select :way_of_delivery_id, WayOfDelivery.all, :id, :name
 
         .big-box__main-box__form-box__shipping-area
           .big-box__main-box__form-box__shipping-area__name 発送元の地域
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-area__box
-            = f.collection_select :region, Prefecture.all, :id, :name
+            = f.collection_select :region_id, Prefecture.all, :id, :name
 
         .big-box__main-box__form-box__shipping-date
           .big-box__main-box__form-box__shipping-date__name 発送日の目安
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-date__box
-            = f.collection_select :shipping_date, Shipping_date.all, :id, :name
+            = f.collection_select :shipping_date_id, ShippingDate.all, :id, :name
 
         .big-box__main-box__form-box__SaleStatu 
           .big-box__main-box__form-box__SaleStatu__name ステータス
