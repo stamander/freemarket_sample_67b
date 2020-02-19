@@ -4,7 +4,7 @@
     %link{href: "category.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to "/" do
+        = link_to root_path do
           = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
@@ -19,6 +19,7 @@
             ブランド
           = link_to detail_index_path, class:"anylink",id:"links__right" do
             商品詳細
+
       .linkrecord__right
         .links
           = link_to new_furimauser_session_path, class:"anylink" do
@@ -32,7 +33,7 @@
       .nowPlace__space
         >
       .nowPlace__title
-        レディース
+        インテリア
     
     .Pickup-category
       %h2.Pickup__title ピックアップカテゴリー
