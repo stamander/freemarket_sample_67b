@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :quality
   belongs_to_active_hash :postage
   belongs_to_active_hash :shipping_date
-
+  belongs_to :buyer,class_name:"User",optional: true
   belongs_to :furimauser
   has_many :images, dependent: :destroy
 
