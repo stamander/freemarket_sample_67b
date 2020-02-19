@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.index ["furimauser_id"], name: "index_account_profiles_on_furimauser_id", using: :btree
   end
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "prefecture_id"
-    t.string   "city"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "furimauser_id", null: false
     t.string   "customer_id",   null: false
