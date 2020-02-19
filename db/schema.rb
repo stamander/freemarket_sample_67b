@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20200218072251) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
 
+
+
+
     t.integer  "prefecture_id"
     t.string   "city"
     t.datetime "created_at",    null: false
@@ -57,6 +60,8 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
 
+
+
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -67,6 +72,7 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.datetime "updated_at",    null: false
     t.index ["furimauser_id"], name: "index_cards_on_furimauser_id", using: :btree
   end
+
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "use_id",                   null: false
@@ -87,6 +93,8 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.index ["email"], name: "index_controllers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_controllers_on_reset_password_token", unique: true, using: :btree
   end
+
+
 
   create_table "fadresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "furimauser_id"
@@ -140,14 +148,15 @@ ActiveRecord::Schema.define(version: 20200218072251) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
     t.integer  "category_id",                   null: false
-<<<<<<< HEAD
+
     t.integer  "brand_id",                      null: false
-=======
+
     t.integer  "brand_id"
->>>>>>> 118c72ae6518b54499ee1d2e82471ae0edb9e83d
+
     t.text     "explain",         limit: 65535, null: false
     t.integer  "postage",                       null: false
     t.string   "region",                        null: false
@@ -156,7 +165,7 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.string   "way_of_delivery",               null: false
     t.string   "quality",                       null: false
     t.string   "SaleStatu",                     null: false
-<<<<<<< HEAD
+
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "seller"
@@ -179,12 +188,25 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.string   "email",           null: false
     t.string   "password",        null: false
     t.string   "passwordcomfirm", null: false
-=======
+
+    t.string   "name",                             null: false
+    t.integer  "price",                            null: false
+    t.integer  "category_id",                      null: false
+    t.integer  "brand_id"
+    t.text     "explain",            limit: 65535, null: false
+    t.integer  "postage_id",                       null: false
+    t.integer  "region_id",                        null: false
+    t.integer  "shipping_date_id",                 null: false
+    t.string   "size",                             null: false
+    t.integer  "way_of_delivery_id",               null: false
+    t.integer  "quality_id",                       null: false
+    t.string   "SaleStatu",                        null: false
     t.integer  "furimauser_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["furimauser_id"], name: "index_items_on_furimauser_id", using: :btree
   end
+
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name",      null: false
@@ -193,15 +215,17 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.string   "last_name_kana",  null: false
     t.integer  "user_id",         null: false
     t.integer  "phone_number",    null: false
->>>>>>> 118c72ae6518b54499ee1d2e82471ae0edb9e83d
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+
 
   create_table "tops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",            null: false
@@ -210,6 +234,8 @@ ActiveRecord::Schema.define(version: 20200218072251) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
+
+
 
   add_foreign_key "account_adresses", "furimausers"
   add_foreign_key "account_profiles", "furimausers"
