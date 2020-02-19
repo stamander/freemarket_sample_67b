@@ -105,7 +105,7 @@
           .big-box__main-box__form-box__shipping-area__name 発送元の地域
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-area__box
-            = f.collection_select :region_id, Prefecture.all, :id, :name
+            = f.collection_select :region_id, Region.all, :id, :name
 
         .big-box__main-box__form-box__shipping-date
           .big-box__main-box__form-box__shipping-date__name 発送日の目安

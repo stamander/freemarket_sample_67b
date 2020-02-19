@@ -116,7 +116,7 @@
       .Pickup__forms
         - @item.first(3).each do |item|
           .Pickup__form
-          = link_to "/exhibitions/#{item.id}" do
+          = link_to exhibition_path(id:item) do
             %figure{class: "Pickup__item--image"}
               - item.images.first(1).each do |image|
                 =image_tag(image.image1)
