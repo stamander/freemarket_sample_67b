@@ -24,6 +24,10 @@ class ExhibitionsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @user = Furimauser.find(@item.furimauser_id)
+
+
   end
 
   def destroy
@@ -37,7 +41,7 @@ class ExhibitionsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage,:region,:brand_id,:shipping_date,:size,:way_of_delivery,:quality,images_attributes:[:image1,:_destroy, :id]).merge(furimauser_id: current_furimauser.id)
+    params.require(:item).permit(:name,:price,:SaleStatu,:category_id,:explain,:postage_id,:region_id,:brand_id,:shipping_date_id,:size,:way_of_delivery_id,:quality_id,images_attributes:[:image1,:_destroy, :id]).merge(furimauser_id: current_furimauser.id)
   end
 
 end

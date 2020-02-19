@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   root "top#index"
   resources :top, only: :index 
-  resources :exhibitions, except: :show
+  resources :exhibitions
   resources :user, only: :index
   resources :detail, only: [:index,:edit,:destroy,:update]
   resources :mypj, except: :show
