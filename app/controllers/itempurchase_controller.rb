@@ -1,6 +1,7 @@
 class ItempurchaseController < ApplicationController
   require "payjp"
   before_action :set_card, only: [:pay,:new]
+  before_action :set_item
   before_action :get_payjp_info, only: [:new, :pay]
 
   def index
@@ -10,7 +11,6 @@ class ItempurchaseController < ApplicationController
     if @card.blank?
       redirect_to edit_card_path(current_furimauser.id)
     else 
-    @item = Item.find(1)
     @image = Image.find(1)
     customer = Payjp::Customer.retrieve(@card.customer_id)
     @card_information = customer.cards.retrieve(@card.card_id)
@@ -33,7 +33,6 @@ class ItempurchaseController < ApplicationController
   end
 
   def pay
-    @item = Item.find(1)
     Payjp::Charge.create(
       currency: 'jpy', 
       amount: @item.price, 
@@ -44,7 +43,6 @@ class ItempurchaseController < ApplicationController
   end
 
   def done
-    @item = Item.find(1)
     @image = Image.find(1)
   end
 
@@ -65,5 +63,8 @@ class ItempurchaseController < ApplicationController
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
   end
 
+  def set_item
+    @item = Item.find(7)
+  end
 
 end
