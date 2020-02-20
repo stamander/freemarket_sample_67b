@@ -12,7 +12,7 @@
     .linkrecord
       .linkrecord__left
         .links
-          - @profile.each do |profile|
+          - @profile.first(1).each do |profile|
             - if current_furimauser.id == profile.furimauser_id
               = link_to mypj_index_path,class:"redirectB" do
                 マイページへ戻る

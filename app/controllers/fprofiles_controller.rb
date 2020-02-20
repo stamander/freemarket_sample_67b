@@ -1,6 +1,6 @@
 class FprofilesController < ApplicationController
   def index
-    @profile = Fprofile.all.order(furimauser_id: :asc)
+    @profile = Fprofile.all.where(furimauser_id: current_furimauser.id)
   end
 
   def new

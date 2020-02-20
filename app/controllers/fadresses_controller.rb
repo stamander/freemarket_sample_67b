@@ -1,10 +1,10 @@
 class FadressesController < ApplicationController
   def index
-    @adress = Fadress.all
+    @address = Fadress.all.where(furimauser_id: current_furimauser.id)
   end
 
   def new
-    @adress = Fadress.new
+    @address = Fadress.new
   end
 
   def create
@@ -13,12 +13,12 @@ class FadressesController < ApplicationController
   end
 
   def edit
-    @adress = Fadress.find(params[:id])
+    @address = Fadress.find(params[:id])
   end
 
   def update
-    @adress = Fadress.find(params[:id])
-    @adress.update(fadress_params)
+    @address = Fadress.find(params[:id])
+    @address.update(fadress_params)
     redirect_to fadresses_path
   end
 
