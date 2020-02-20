@@ -9,15 +9,7 @@
         %input.keywordbox{placeholder: "キーワードから探す"}/
         %button.searchBtn{type: "submit"}
           = image_tag "icon-search 1.png",class:"glass"
-    .linkrecord
-      .linkrecord__left
-        .links
-          = link_to category_index_path, class:"anylink" do
-            カテゴリ
-          = link_to "", class:"anylink",id:"links__right" do
-            ブランド
-          = link_to detail_index_path, class:"anylink",id:"links__right" do
-            商品詳細
+
   .middle
     .center
       .center__text
@@ -59,6 +51,8 @@
                   = f.label "建物名"
               = f.text_field :building, placeholder: "建物名を入力してください"
             .submit
-              = f.submit "保存"
+              = f.submit "保存" 
+
+
 
 

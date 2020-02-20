@@ -24,6 +24,6 @@ class FprofilesController < ApplicationController
 
   private
   def fprofile_params
-    params.require(:fprofile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :phone_number)
+    params.require(:fprofile).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :phone_number).merge(furimauser_id: current_furimauser)
   end
 end
