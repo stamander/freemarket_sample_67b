@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.string   "name",                             null: false
     t.integer  "price",                            null: false
     t.integer  "category_id",                      null: false
-    t.integer  "brand_id"
+    t.string   "brand_id"
     t.text     "explain",            limit: 65535, null: false
     t.integer  "postage_id",                       null: false
     t.integer  "region_id",                        null: false

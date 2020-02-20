@@ -113,16 +113,12 @@
       %h3.Pickup__subtitle 新規投稿商品
       .Pickup__forms
         - @item.first(3).each do |item|
-          
-            
           .Pickup__form
           -if item.buyer_id.blank?
-
             = link_to exhibition_path(id:item) do
               %figure{class: "Pickup__item--image"}
                 - item.images.first(1).each do |image|
                   =image_tag(image.image1)
-
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
                 = item.name
@@ -140,10 +136,11 @@
       .Pickup__forms
         - @categoryitem.first(3).each do |categoryitem|
           .Pickup__form
-          = link_to exhibition_path(id:categoryitem) do
-            %figure{class: "Pickup__item--image"}
-              - categoryitem.images.first(1).each do |image|
-                = image_tag(image.image1)
+          -if categoryitem.buyer_id.blank?
+            = link_to exhibition_path(id:categoryitem) do
+              %figure{class: "Pickup__item--image"}
+                - categoryitem.images.first(1).each do |image|
+                  =image_tag(image.image1)
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
                 = categoryitem.name
@@ -153,6 +150,11 @@
                 .Pickup__form__Pickup__item--price__icon
                   %i.fas.fa-star 0
               %p (税込)
+          -else
+            sold
+            
+            
+              
     .download-Advertisement.download-Advertisement3
       .download-Advertisement3__items
         %p.download-Advertisement3__subtitle 誰でもかんたん、人生を変えるフリマアプリ
