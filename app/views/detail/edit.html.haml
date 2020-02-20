@@ -29,14 +29,14 @@
       .big-box__side-bar__mypj-box__contents
         = link_to "プロフィール",fprofiles_path
       .big-box__side-bar__mypj-box__contents 
-        = link_to "発送元・お届け先住所変更","#"
+        = link_to "発送元・お届け先住所変更","fadresses"
       .big-box__side-bar__mypj-box__contents 
         - if furimauser_signed_in?
           = link_to "支払い方法", card_path(current_furimauser.id)
         - else
           = link_to "支払い方法", new_furimauser_session_path
       .big-box__side-bar__mypj-box__contents 
-        = link_to "ログアウト",.html_safe, destroy_furimauser_session_path, method: :delete,class:"anylink"
+        = link_to "ログアウト".html_safe, destroy_furimauser_session_path, method: :delete,class:"anylink"
   .form
   = form_for @item,url: detail_path,method: :patch ,local: true do |f|
     .big-box__main-box
