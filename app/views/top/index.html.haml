@@ -9,14 +9,18 @@
         %input.keywordbox{placeholder: "キーワードから探す"}/
         %button.searchBtn{type: "submit"}
           = image_tag "icon-search 1.png",class:"glass"
+
     .linkrecord
-      .linkrecord__left
-        .links
-          = link_to category_index_path,class:"anylink" do
-            カテゴリ
-          = link_to "",class:"anylink",id:"links__right" do
-            ブランド
-            
+      - if furimauser_signed_in?  
+        - @profile.each do |profile|
+          - @address.each do |address|
+            - if current_furimauser.id == profile.furimauser_id && current_furimauser.id == profile.furimauser_id
+              .linkrecord__left
+                .links
+                  = link_to category_index_path,class:"anylink" do
+                    カテゴリ
+                  = link_to "",class:"anylink",id:"links__right" do
+                    ブランド
       .linkrecord__right
         .links
           - if furimauser_signed_in?
@@ -28,6 +32,14 @@
               新規会員登録
             = link_to "furimausers/sign_in",class:"personB" do
               ログイン
+  - if furimauser_signed_in?
+    - @profile.each do |profile|
+      .attention
+        - if current_furimauser.id == profile.furimauser_id && current_furimauser.id == profile.furimauser_id
+        - else
+          .attention__profile
+            = link_to mypj_index_path, class:"attentionB" do
+              商品の購入・出品には、こちらでプロフィールと配送先を登録する必要があります
   %main
     .download-Advertisement.download-Advertisement1
       .download-Advertisement__items
@@ -113,16 +125,12 @@
       %h3.Pickup__subtitle 新規投稿商品
       .Pickup__forms
         - @item.first(3).each do |item|
-          
-            
           .Pickup__form
           -if item.buyer_id.blank?
-
             = link_to exhibition_path(id:item) do
               %figure{class: "Pickup__item--image"}
                 - item.images.first(1).each do |image|
                   =image_tag(image.image1)
-
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
                 = item.name
@@ -140,9 +148,11 @@
       .Pickup__forms
         - @categoryitem.first(3).each do |categoryitem|
           .Pickup__form
-            %figure{class: "Pickup__item--image"}
-              - categoryitem.images.first(1).each do |image|
-                = image_tag image.image1
+          -if categoryitem.buyer_id.blank?
+            = link_to exhibition_path(id:categoryitem) do
+              %figure{class: "Pickup__item--image"}
+                - categoryitem.images.first(1).each do |image|
+                  =image_tag(image.image1)
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
                 = categoryitem.name
@@ -152,6 +162,11 @@
                 .Pickup__form__Pickup__item--price__icon
                   %i.fas.fa-star 0
               %p (税込)
+          -else
+            sold
+            
+            
+              
     .download-Advertisement.download-Advertisement3
       .download-Advertisement3__items
         %p.download-Advertisement3__subtitle 誰でもかんたん、人生を変えるフリマアプリ
@@ -204,9 +219,14 @@
         = image_tag "logo.png",class:"glass"
       %p ©︎ FURIMA
     = link_to do 
-      .ExhibitionBtn
-        %span.ExhibitionBtn__text 出品する
-        %br/
-        .ExhibitionBtn__icon 
-          = link_to new_exhibition_path do
-            = image_tag "icon_camera.png",class:"glass"
+      
+      - if furimauser_signed_in?  
+        - @profile.each do |profile|
+          - @address.each do |address|
+            - if current_furimauser.id == profile.furimauser_id && current_furimauser.id == profile.furimauser_id
+              .ExhibitionBtn
+                %span.ExhibitionBtn__text 出品する
+                %br/
+                .ExhibitionBtn__icon 
+                  = link_to new_exhibition_path do
+                    = image_tag "icon_camera.png",class:"glass"

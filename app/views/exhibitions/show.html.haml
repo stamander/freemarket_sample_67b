@@ -32,22 +32,23 @@
       .topcontent
         .itemBox
           %h2.itemBox__name
-            THE NORTH FACE フリース
+            = @item.name
           .itemBox__body
             %ul.items-detail
               %li.photo-detail
               - @item.images.first(1).each do |image|
-                =image_tag(image.image1)
+                =image_tag(image.image1,class: "main-photo")
           .itemBox__price
             %span.item-price-bold
-              ¥2,380円
+              ¥#{@item.price}
             .item__price-detail
               %span.item-tax
                 (税込)
               %span.item-shipping-fee
                 送料込み
             .itemDetail
-              THE NORTH FACE フリース
+              %textarea.comment1{name:"comment"}
+                =@item.explain
             .table__detail
               %table
                 %tr
@@ -86,10 +87,12 @@
             .text-center
               - if furimauser_signed_in? && current_furimauser.id == @item.furimauser_id
                 = link_to edit_detail_path(@item.id), class: "item-buy-btn" do
-                  編集する
+                  .item-buy-btn
+                    編集する
                   %br
                 = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn" do
-                  削除する
+                  .item-buy-btn1
+                    削除する
               - else current_furimauser.id != @seller 
                 = link_to itempurchase_path, class: "item-buy-btn" do
                   購入画面にすすむ

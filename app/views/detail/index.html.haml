@@ -18,76 +18,79 @@
           ブランド
     .linkrecord__right
       .links
-        = link_to new_furimauser_session_path, class:"anylink" do
-          ログイン
-        = link_to ew_furimauser_registration_path, class:"anylink",id:"links__right" do
-          新規会員登録
+        - if furimauser_signed_in?
+          = link_to mypj_index_path class:"personB" do
+            マイページ
+          = link_to "ログアウト" .html_safe, destroy_furimauser_session_path, method: :delete,class:"personB"
+        - else
+          = link_to "furimausers/sign_up", class:"personB" do
+            新規会員登録
+          = link_to "furimausers/sign_in",class:"personB" do
+            ログイン
 .main-detail
   .showMain
     .contentRight
       .topcontent
         .itemBox
           %h2.itemBox__name
-            THE NORTH FACE フリース
+            =@item.name
           .itemBox__body
             %ul.items-detail
               %li.photo-detail
-                = image_tag "member_photo_noimage_thumb.png",size: "300x200"
-                %ul.item-detail
-                  %li.photos
-                    = image_tag "member_photo_noimage_thumb.png",size: "180x50"
-                  %li.photos
-                    = image_tag "member_photo_noimage_thumb.png",size: "180x50"
-                  %li.photos
-                    = image_tag "member_photo_noimage_thumb.png",size: "180x50"
+              - @item.images.first(1).each do |image|
+                =image_tag(image.image1)
           .itemBox__price
             %span.item-price-bold
-              ¥2,380円
+               ¥#{@item.price}
             .item__price-detail
               %span.item-tax
                 (税込)
               %span.item-shipping-fee
                 送料込み
             .itemDetail
-              THE NORTH FACE フリース
+              %textarea.comment1{name:"comment"}
+                =@item.explain
             .table__detail
               %table
                 %tr
                   %th 出品者
                   %td 
-                    = link_to '#' do
-                      user_name
+                    = @user.nuckName
                 %tr
                   %th カテゴリー
                   %td
-                    = link_to '#' do
-                      メンズ
+                    = @item.category.name
                 %tr
                   %th ブランド
-                  %td aaa
+                  %td
+                    = @item.brand_id
                 %tr
                   %th 商品状態
-                  %td 新品、未使用
+                  %td 
+                    = @item.quality.name
                 %tr
                   %th 配送料の負担
-                  %td 送料込み
+                  %td 
+                    = @item.postage.name
                 %tr
                   %th 配送の方法
-                  %td メルカリ便
+                  %td 
+                    = @item.way_of_delivery.name
                 %tr
                   %th 発送元地域
                   %td 
-                    = link_to '#' do
-                      埼玉県
+                    = @item.region.name
                 %tr
                   %th 発想の目安
-                  %td 1~2日で発想
+                  %td 
+                    = @item.shipping_date.name
             .text-center
               - if furimauser_signed_in? && current_furimauser.id == @item.furimauser_id
                 = link_to edit_detail_path(@item.id), class: "item-buy-btn" do
                   編集する
                   %br
-                = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn" do
+                = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn1" do
+                  .item-buy-btn1
                   削除する
               - else current_furimauser.id != @seller 
                 = link_to new_itempurchase_path, class: "item-buy-btn" do
