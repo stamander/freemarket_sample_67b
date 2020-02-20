@@ -1,5 +1,4 @@
 body{
-  margin: 0 auto;
   border-bottom: 1px,red;
 }
 
@@ -67,6 +66,16 @@ nav{
   &__right{
     margin-left: auto;
     color: black;
+  }
+}
+
+.attention{
+  display: flex;
+  &__profile{
+    padding: 10px;
+    background-color: orangered;
+    margin: 0 0 10px 27em;
+    font-weight: bold;
   }
 }
 
