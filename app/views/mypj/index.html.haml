@@ -23,9 +23,9 @@
     .big-box__side-bar__mypj-box
       .big-box__side-bar__mypj-box__title 設定
       .big-box__side-bar__mypj-box__contents
-        = link_to "プロフィール", fprofiles_path
+        = link_to "プロフィール",new_fprofile_path
       .big-box__side-bar__mypj-box__contents 
-        = link_to "発送元・お届け先住所", fadresses_path
+        = link_to "発送元・お届け先住所", new_fadress_path
       .big-box__side-bar__mypj-box__contents 
         - if furimauser_signed_in?
           = link_to "支払い方法", card_path(current_furimauser.id)
