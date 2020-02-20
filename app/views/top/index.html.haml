@@ -148,22 +148,22 @@
       .Pickup__forms
         - @categoryitem.first(3).each do |categoryitem|
           .Pickup__form
-          -if categoryitem.buyer_id.blank?
-            = link_to exhibition_path(id:categoryitem) do
-              %figure{class: "Pickup__item--image"}
-                - categoryitem.images.first(1).each do |image|
-                  =image_tag(image.image1)
-            .Pickup__item--body
-              %h3{class: "Pickup__item--name"} 
-                = categoryitem.name
-              .Pickup__item--price
-                .Pickup__form__Pickup__item--price__name 
-                  金額#{categoryitem.price}円
-                .Pickup__form__Pickup__item--price__icon
-                  %i.fas.fa-star 0
-              %p (税込)
-          -else
-            sold
+            -if categoryitem.buyer_id.blank?
+              = link_to exhibition_path(id:categoryitem) do
+                %figure{class: "Pickup__item--image"}
+                  - categoryitem.images.first(1).each do |image|
+                    =image_tag(image.image1)
+              .Pickup__item--body
+                %h3{class: "Pickup__item--name"} 
+                  = categoryitem.name
+                .Pickup__item--price
+                  .Pickup__form__Pickup__item--price__name 
+                    金額#{categoryitem.price}円
+                  .Pickup__form__Pickup__item--price__icon
+                    %i.fas.fa-star 0
+                %p (税込)
+            -else
+              sold
             
             
               

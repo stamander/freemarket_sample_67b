@@ -12,8 +12,7 @@
       .links
         = link_to category_index_path, class:"anylink" do
           カテゴリ
-        = link_to "", class:"anylink",id:"links__right" do
-          ブランド
+
     .linkrecord__right
       .links
         - if furimauser_signed_in?
@@ -37,9 +36,7 @@
       .big-box__side-bar__mypj-box__contents 
         = link_to "支払い方法", "/cards/edit"
       .big-box__side-bar__mypj-box__contents 
-        = link_to "電話番号の確認","#"
-      .big-box__side-bar__mypj-box__contents 
-        = link_to "ログアウト","#"
+        = link_to "ログアウト".html_safe, destroy_furimauser_session_path, method: :delete,class:"personB"
 
   .big-box__mainbar 
     .main__confirmation
