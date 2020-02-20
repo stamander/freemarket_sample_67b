@@ -70,16 +70,12 @@ nav{
 }
 
 .attention{
-  margin: 0  9em;
   display: flex;
   &__profile{
     padding: 10px;
     background-color: orangered;
-  }
-  &__address{
-    margin-left: 10%;
-    padding: 10px;
-    background-color: orangered;
+    margin: 0 0 10px 27em;
+    font-weight: bold;
   }
 }
 

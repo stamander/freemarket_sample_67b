@@ -35,18 +35,11 @@
   - if furimauser_signed_in?
     - @profile.each do |profile|
       .attention
-        - if current_furimauser.id == profile.furimauser_id
+        - if current_furimauser.id == profile.furimauser_id && current_furimauser.id == profile.furimauser_id
         - else
           .attention__profile
-            = link_to new_fprofile_path, class:"attentionB" do
-              商品の購入・出品には、こちらでプロフィールを登録する必要があります
-
-        - @address.each do |address|
-          - if current_furimauser.id == profile.furimauser_id
-          - else
-          .attention__address
-            = link_to new_fadress_path ,class:"attentionB" do
-              商品の購入・出品には、こちらで配送先を登録する必要があります
+            = link_to mypj_index_path, class:"attentionB" do
+              商品の購入・出品には、こちらでプロフィールと配送先を登録する必要があります
   %main
     .download-Advertisement.download-Advertisement1
       .download-Advertisement__items
