@@ -31,10 +31,15 @@ Rails.application.routes.draw do
       get 'confirmation', to: 'cards#confirmation'
     end
   end
-  resources :itempurchase, only: [:index, :new] do
+  resources :itempurchase, only: [:index,:show, :new] do
     collection do
       post 'pay', to: 'itempurchase#pay'
       get 'done', to: 'itempurchase#done'
+    end
+  end
+  resources :pay, only: [:create,:show,:new] do
+    collection do
+      get 'done', to: 'pay#done'
     end
   end
 end

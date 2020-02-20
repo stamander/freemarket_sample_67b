@@ -2,7 +2,8 @@
   %link{href: "_details.scss", rel: "stylesheet"}/
   %nav
     %h1.main-logo
-      = image_tag "logo.png"
+      = link_to root_path do
+        = image_tag "logo.png"
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
@@ -10,16 +11,21 @@
   .linkrecord
     .linkrecord__left
       .links
-        = link_to "",class:"anylink" do
+        = link_to category_index_path ,class:"anylink" do
           カテゴリ
         = link_to "",class:"anylink",id:"links__right" do
           ブランド
     .linkrecord__right
       .links
-        = link_to "",class:"anylink" do
-          ログイン
-        = link_to "",class:"anylink",id:"links__right" do
-          新規会員登録
+        - if furimauser_signed_in?
+          = link_to mypj_index_path class:"personB" do
+            マイページ
+          = link_to "ログアウト" .html_safe, destroy_furimauser_session_path, method: :delete,class:"personB"
+        - else
+          = link_to "furimausers/sign_up", class:"personB" do
+            新規会員登録
+          = link_to "furimausers/sign_in",class:"personB" do
+            ログイン
 .main-detail
   .showMain
     .contentRight
@@ -85,7 +91,7 @@
                 = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn" do
                   削除する
               - else current_furimauser.id != @seller 
-                = link_to new_itempurchase_path, class: "item-buy-btn" do
+                = link_to itempurchase_path, class: "item-buy-btn" do
                   購入画面にすすむ
 
             .optionalArea
