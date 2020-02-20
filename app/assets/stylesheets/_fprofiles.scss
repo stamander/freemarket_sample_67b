@@ -9,8 +9,19 @@
   margin-right: 10px;
   border: solid 1px;
 }
+.redirectB{
+  margin-left: 3em;
+  background-color: aquamarine;
+  padding: 15px 10px;
+  border: solid 1px;
+  font-size: 13px;
+}
 .profileForm{
-  margin: 0 30%;
+  margin: 50px 30%;
+  border: solid black;
+  &__box{
+    padding: 40px;
+  }
   &__title{
     font-size: 25px;
     font-weight: bold;
@@ -30,5 +41,4 @@
       margin-top: 5px;
     }
   }
-  
 }
