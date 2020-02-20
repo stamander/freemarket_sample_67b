@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   def create
     if params['payjp-token'].blank?
-      redirect_to action: "edit", id: current_furimauser.id
+      render action: "edit", id: current_furimauser.id
     else
       customer = Payjp::Customer.create(
         email: current_furimauser.email,
@@ -23,6 +23,7 @@ class CardsController < ApplicationController
       if @card.save
         redirect_to card_path(current_furimauser.id)
       else
+
         redirect_to action: "edit", id: current_furimauser.id
       end
     end

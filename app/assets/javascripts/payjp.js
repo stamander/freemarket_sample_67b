@@ -20,10 +20,10 @@ document.addEventListener(
             $('#card_token').append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             );
-            document.inputForm.submit();
             alert("登録が完了しました"); 
+            document.inputForm.submit();
           } else {
-            alert("カード情報が正しくありません。"); 
+            alert("カード情報が正しくありません。正しい情報でも登録されない場合は広告ブロックなどのgoogle拡張機能を一度切ってからお試しください"); 
           }
         });
       });
