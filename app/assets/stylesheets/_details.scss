@@ -98,10 +98,12 @@ header{
           }
           &__boby {
             margin: 16px 0 0;
+   
           }
           .items-detail {
             display: flex;
             position: relative;
+           
             .photo-detail {
               display: flex;
               align-items: center;
@@ -367,5 +369,5 @@ footer{
 }
 
 .main-photo {
-  margin-right: 160px;
+  width: 100px;
 }
