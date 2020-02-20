@@ -12,37 +12,44 @@
     .linkrecord
       .linkrecord__left
         .links
-          = link_to new_fprofile_path,class:"createB" do
-            新規作成
-          = link_to "fprofiles/#{current_furimauser.id}/edit",class:"editB" do
-            編集
+          - @profile.each do |profile|
+            - if current_furimauser.id == profile.furimauser_id
+              = link_to mypj_index_path,class:"redirectB" do
+                マイページへ戻る
+            - else
+              = link_to mypj_index_path,class:"redirectB" do
+                マイページへ戻る
+              = link_to new_fprofile_path,class:"createB" do
+                新規作成
+          
   .profileForm
-    - @profile.first(1).each do |profile|
-      .profileForm__title
-        個人情報
-      .profileForm__items
-        .profileForm__item
-          .profileForm__item__name    
-            苗字
-          .profileForm__item__information  
-            %input{disabled:"disabled", type:"“text”",value:"#{profile.first_name}"}/
-        .profileForm__item
-          .profileForm__item__name    
-            名前
-          .profileForm__item__information  
-            %input{disabled:"disabled", type:"“text”",value:"#{profile.last_name}"}/
-        .profileForm__item
-          .profileForm__item__name    
-            苗字（カタカナ）
-          .profileForm__item__information  
-            %input{disabled:"disabled", type:"“text”",value:"#{profile.first_name_kana}"}/
-        .profileForm__item
-          .profileForm__item__name    
-            名前（カタカナ）
-          .profileForm__item__information  
-            %input{disabled:"disabled", type:"“text”",value:"#{profile.last_name_kana}"}/
-        .profileForm__item
-          .profileForm__item__name
-            連絡先
-          .profileForm__item__information  
-            %input{disabled:"disabled", type:"“text”",value:"#{profile.phone_number}"}/
+    .profileForm__box
+      - @profile.first(1).each do |profile|
+        .profileForm__title
+          個人情報
+        .profileForm__items
+          .profileForm__item
+            .profileForm__item__name    
+              苗字
+            .profileForm__item__information  
+              %input{disabled:"disabled", type:"“text”",value:"#{profile.first_name}"}/
+          .profileForm__item
+            .profileForm__item__name    
+              名前
+            .profileForm__item__information  
+              %input{disabled:"disabled", type:"“text”",value:"#{profile.last_name}"}/
+          .profileForm__item
+            .profileForm__item__name    
+              苗字（カタカナ）
+            .profileForm__item__information  
+              %input{disabled:"disabled", type:"“text”",value:"#{profile.first_name_kana}"}/
+          .profileForm__item
+            .profileForm__item__name    
+              名前（カタカナ）
+            .profileForm__item__information  
+              %input{disabled:"disabled", type:"“text”",value:"#{profile.last_name_kana}"}/
+          .profileForm__item
+            .profileForm__item__name
+              連絡先
+            .profileForm__item__information  
+              %input{disabled:"disabled", type:"“text”",value:"#{profile.phone_number}"}/
