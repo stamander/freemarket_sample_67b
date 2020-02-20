@@ -220,12 +220,9 @@
     = link_to do 
       
       - if furimauser_signed_in?  
-        - @profile.each do |profile|
-          - @address.each do |address|
-            - if current_furimauser.id == profile.furimauser_id && current_furimauser.id == profile.furimauser_id
-              .ExhibitionBtn
-                %span.ExhibitionBtn__text 出品する
-                %br/
-                .ExhibitionBtn__icon 
-                  = link_to new_exhibition_path do
-                    = image_tag "icon_camera.png",class:"glass"
+        .ExhibitionBtn
+          %span.ExhibitionBtn__text 出品する
+          %br
+            .ExhibitionBtn__icon 
+              = link_to new_exhibition_path do
+                = image_tag "icon_camera.png",class:"glass"
