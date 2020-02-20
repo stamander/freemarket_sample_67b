@@ -24,6 +24,7 @@ class ExhibitionsController < ApplicationController
   end
 
   def show
+    redirect_to new_furimauser_session_path unless furimauser_signed_in?
     @item = Item.find(params[:id])
     @user = Furimauser.find(@item.furimauser_id)
 

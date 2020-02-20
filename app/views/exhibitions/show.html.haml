@@ -2,7 +2,8 @@
   %link{href: "_details.scss", rel: "stylesheet"}/
   %nav
     %h1.main-logo
-      = image_tag "logo.png"
+      = link_to root_path do
+        = image_tag "logo.png"
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
@@ -10,7 +11,7 @@
   .linkrecord
     .linkrecord__left
       .links
-        = link_to "",class:"anylink" do
+        = link_to category_index_path ,class:"anylink" do
           カテゴリ
         = link_to "",class:"anylink",id:"links__right" do
           ブランド
@@ -93,7 +94,7 @@
                   .item-buy-btn1
                     削除する
               - else current_furimauser.id != @seller 
-                = link_to new_itempurchase_path, class: "item-buy-btn" do
+                = link_to itempurchase_path, class: "item-buy-btn" do
                   購入画面にすすむ
 
             .optionalArea

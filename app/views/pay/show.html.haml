@@ -49,7 +49,7 @@
 
           .contents__buy-info-submit__table
 
-            = link_to pay_itempurchase_index_path, method: :post,class:"contents__buy-info-submit__table__submit-btn" do
+            = link_to pay_itempurchase_index_path(id: params[:id]), method: :post,class:"contents__buy-info-submit__table__submit-btn" do
               購入する
 
   .bot
