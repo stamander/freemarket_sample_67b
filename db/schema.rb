@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20200220093133) do
     t.integer  "quality_id",                       null: false
     t.string   "SaleStatu",                        null: false
     t.integer  "furimauser_id"
+    t.integer  "buyer_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.index ["furimauser_id"], name: "index_items_on_furimauser_id", using: :btree

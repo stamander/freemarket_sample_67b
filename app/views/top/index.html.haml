@@ -3,7 +3,7 @@
     %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to root_path do
+        = link_to "/" do
           = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
@@ -16,8 +16,6 @@
             カテゴリ
           = link_to "",class:"anylink",id:"links__right" do
             ブランド
-          = link_to "detail",class:"anylink",id:"links__right" do
-            商品詳細
             
       .linkrecord__right
         .links
@@ -115,11 +113,15 @@
       %h3.Pickup__subtitle 新規投稿商品
       .Pickup__forms
         - @item.first(3).each do |item|
+          
+            
           .Pickup__form
-          = link_to exhibition_path(id:item) do
-            %figure{class: "Pickup__item--image"}
-              - item.images.first(1).each do |image|
-                =image_tag(image.image1)
+          -if item.buyer_id.blank?
+
+            = link_to exhibition_path(id:item) do
+              %figure{class: "Pickup__item--image"}
+                - item.images.first(1).each do |image|
+                  =image_tag(image.image1)
 
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
@@ -130,6 +132,8 @@
                 .Pickup__form__Pickup__item--price__icon
                   %i.fas.fa-star 0
               %p (税込)
+          -else
+            sold
     .Pickup-brand
       %h2.Pickup__title ピックアップブランド
       %h3.Pickup__subtitle UNIQLO

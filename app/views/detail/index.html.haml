@@ -4,6 +4,7 @@
   %nav
     %h1.main-logo
       = image_tag "logo.png"
+        = link_to root_path 
     .keyword
       %input.keywordbox{placeholder: "キーワードから探す"}/
       %button.searchBtn{type: "submit"}
@@ -11,7 +12,7 @@
   .linkrecord
     .linkrecord__left
       .links
-        = link_to "",class:"anylink" do
+        = link_to category, class:"anylink" do
           カテゴリ
         = link_to "",class:"anylink",id:"links__right" do
           ブランド

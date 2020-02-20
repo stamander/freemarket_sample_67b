@@ -14,6 +14,9 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.integer :quality_id,null: false
       t.string :SaleStatu,null:false
       t.references :furimauser, foreign_key: true
+      t.integer :buyer_id
+
+      
       t.timestamps
     end
   end
