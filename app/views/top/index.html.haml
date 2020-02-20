@@ -136,9 +136,10 @@
       .Pickup__forms
         - @categoryitem.first(3).each do |categoryitem|
           .Pickup__form
+          = link_to exhibition_path(id:categoryitem) do
             %figure{class: "Pickup__item--image"}
               - categoryitem.images.first(1).each do |image|
-                = image_tag image.image1
+                = image_tag(image.image1)
             .Pickup__item--body
               %h3{class: "Pickup__item--name"} 
                 = categoryitem.name
