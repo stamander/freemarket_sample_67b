@@ -1,10 +1,9 @@
 %body
   %header
     %link{href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css", rel: "stylesheet"}/
-    %link{href: "category.css", rel: "stylesheet"}/
     %nav
       %h1.main-logo
-        = link_to root_path do
+        = link_to "/" do
           = image_tag "logo.png"
       .keyword
         %input.keywordbox{placeholder: "キーワードから探す"}/
@@ -15,16 +14,20 @@
         .links
           = link_to category_index_path,class:"anylink" do
             カテゴリ
-          = link_to "", class:"anylink",id:"links__right" do
+          = link_to "",class:"anylink",id:"links__right" do
             ブランド
-          = link_to detail_index_path,class:"anylink",id:"links__right" do
-            商品詳細
+            
       .linkrecord__right
         .links
-          = link_to new_furimauser_session_path, class:"anylink" do
-            ログイン
-          = link_to new_furimauser_registration_path, class:"anylink",id:"links__right" do
-            新規会員登録
+          - if furimauser_signed_in?
+            = link_to mypj_index_path class:"personB" do
+              マイページ
+            = link_to "ログアウト" .html_safe, destroy_furimauser_session_path, method: :delete,class:"personB"
+          - else
+            = link_to "furimausers/sign_up", class:"personB" do
+              新規会員登録
+            = link_to "furimausers/sign_in",class:"personB" do
+              ログイン
     .nowPlace
       .nowPlace__items
       = link_to category_index_path do
@@ -34,6 +37,33 @@
       .nowPlace__title
         メンズ
     
+    .categoryList
+      .categoryLink
+        .categoryLink__title
+          アイテムジャンル
+        .categoryLink__links
+          .categoryLink__linkGenre
+            = link_to "",id:"categoryLink1" do
+              ハット
+            %br/
+            = link_to "",id:"categoryLink2" do
+              トップス
+            %br/
+            = link_to "",id:"categoryLink3" do
+              パンツ
+          .categoryLink__linkGenre
+            = link_to "",id:"categoryLink1" do
+              インナー
+            %br/
+            = link_to "" ,id:"categoryLink2" do
+              ソックス
+            %br/
+            = link_to "",id:"categoryLink2" do
+              シューズ
+            %br/
+            = link_to "" ,id:"categoryLink2" do
+              アクセサリ
+              
     .Pickup-category
       %h2.Pickup__title ピックアップカテゴリー
       %h3.Pickup__subtitle メンズ
