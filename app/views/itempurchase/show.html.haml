@@ -7,7 +7,7 @@
       .contents__area__title 購入内容の確認
       %section.contents__area__item-info
         .contents__area__item__inner
-          = image_tag @image.image1_url,class:"contents__area__item__logo"
+          =image_tag(@image.image1_url,class:"contents__area__item__logo")
           %ul.contents__area__item__about
             %li.contents__area__item__title 
             = @item.name

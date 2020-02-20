@@ -8,10 +8,10 @@ class ItempurchaseController < ApplicationController
     if @card.blank?
       redirect_to edit_card_path(current_furimauser.id)
     else 
-    @image = Image.find(params[:id])
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    @card_information = customer.cards.retrieve(@card.card_id)
-    @card_brand = @card_information.brand
+      @image = Image.find_by(item_id: @item.id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @card_information.brand
       case @card_brand
       when "Visa"
         @card_src = "icon_visa.png"
