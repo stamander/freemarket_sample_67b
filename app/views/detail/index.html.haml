@@ -89,7 +89,8 @@
                 = link_to edit_detail_path(@item.id), class: "item-buy-btn" do
                   編集する
                   %br
-                = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn" do
+                = link_to detail_path(@item.id), method: :delete, class: "item-buy-btn1" do
+                  .item-buy-btn1
                   削除する
               - else current_furimauser.id != @seller 
                 = link_to new_itempurchase_path, class: "item-buy-btn" do

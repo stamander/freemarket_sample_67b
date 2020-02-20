@@ -43,7 +43,7 @@
         #previews
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
-              = image_tag "", data: { index: i }, width: "100", height: '100'
+              = image_tag image.image1.url, data: { index: i }, width: "100", height: '100'
         = f.fields_for :images do |i|
           .js-file_group{"data-index":i.index}
             = i.file_field :image1, class: 'js-file'
@@ -99,19 +99,19 @@
         .big-box__main-box__form-box__way-of-delivary
           .big-box__main-box__form-box__way-of-delivary__name 配送方法
           .big-box__main-box__form-box__way-of-delivary__box
-            = f.collection_select :way_of_delivery, Way_of_delivery.all, :id, :name
+            = f.collection_select :way_of_delivery, WayOfDelivery.all, :id, :name
 
         .big-box__main-box__form-box__shipping-area
           .big-box__main-box__form-box__shipping-area__name 発送元の地域
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-area__box
-            = f.collection_select :region, Prefecture.all, :id, :name
+            = f.collection_select :region, Region.all, :id, :name
 
         .big-box__main-box__form-box__shipping-date
           .big-box__main-box__form-box__shipping-date__name 発送日の目安
           %h1.need<※必須
           .big-box__main-box__form-box__shipping-date__box
-            = f.collection_select :shipping_date, Shipping_date.all, :id, :name
+            = f.collection_select :shipping_date, ShippingDate.all, :id, :name
 
         .big-box__main-box__form-box__SaleStatu 
           .big-box__main-box__form-box__SaleStatu__name ステータス
