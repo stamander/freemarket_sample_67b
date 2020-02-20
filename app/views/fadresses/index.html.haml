@@ -12,8 +12,8 @@
     .linkrecord
       .linkrecord__left
         .links
-          - @adress.each do |adress|
-            - if current_furimauser.id == adress.furimauser_id
+          - @address.first(1).each do |address|
+            - if current_furimauser.id == address.furimauser_id
               = link_to mypj_index_path,class:"redirectB" do
                 マイページへ戻る
             - else
@@ -24,7 +24,7 @@
               
   .profileForm
     .profileForm__box
-      - @adress.first(1).each do |adress|
+      - @address.each do |address|
         .profileForm__title
           配送先情報
         .profileForm__items
@@ -32,24 +32,24 @@
             .profileForm__item__name    
               郵便番号
             .profileForm__item__information  
-              %input{disabled:"disabled", type:"“text”",value:"#{adress.post_number}"}/
+              %input{disabled:"disabled", type:"“text”",value:"#{address.post_number}"}/
           .profileForm__item
             .profileForm__item__name    
               都道府県
             .profileForm__item__information  
-              %input{disabled:"disabled", type:"“text”",value:"#{adress.prefecture}"}/
+              %input{disabled:"disabled", type:"“text”",value:"#{address.prefecture}"}/
           .profileForm__item
             .profileForm__item__name    
               市町村
             .profileForm__item__information  
-              %input{disabled:"disabled", type:"“text”",value:"#{adress.city}"}/
+              %input{disabled:"disabled", type:"“text”",value:"#{address.city}"}/
           .profileForm__item
             .profileForm__item__name    
               番地
             .profileForm__item__information  
-              %input{disabled:"disabled", type:"“text”",value:"#{adress.town}"}/
+              %input{disabled:"disabled", type:"“text”",value:"#{address.town}"}/
           .profileForm__item
             .profileForm__item__name
               建物名
             .profileForm__item__information  
-              %input{disabled:"disabled", type:"“text”",value:"#{adress.building}"}/
+              %input{disabled:"disabled", type:"“text”",value:"#{address.building}"}/
